@@ -1,0 +1,36 @@
+{
+  "name": "SubCheap",
+  "short_name": "SubCheap",
+  "description": "SubCheap – Save big on subscriptions. Track, compare and cancel expensive plans in seconds.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#ffffff",
+  "theme_color": "#e11d48",
+  "categories": ["finance", "productivity", "utilities"],
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/128/18343/18343315.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/18343/18343315.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "illustration.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "SubCheap Dashboard"
+    }
+  ],
+  "lang": "en",
+  "dir": "ltr"
+}

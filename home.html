@@ -1,0 +1,1854 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SUBCHEAP — Home</title>
+    <meta name="description" content="SUBCHEAP — Airtime & Data made cheap! Home dashboard.">
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/128/18343/18343315.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Primary SEO -->
+  <title>SubCheap – Save Money on Subscriptions</title>
+  <meta name="description" content="SubCheap helps you track, compare and cancel expensive subscriptions in seconds. Take control of your recurring payments and start saving today.">
+  <meta name="keywords" content="subscription tracker, cancel subscriptions, save money, subscription manager, SubCheap">
+  <meta name="author" content="SubCheap">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://yourdomain.com/">
+
+  <!-- Theme & PWA -->
+  <meta name="theme-color" content="#e11d48">
+  <meta name="msapplication-TileColor" content="#e11d48">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="SubCheap">
+  <link rel="manifest" href="/manifest.json">
+
+  <!-- Favicon & Icons -->
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/128/18343/18343315.png">
+  <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/18343/18343315.png">
+  <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/128/18343/18343315.png">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourdomain.com/">
+  <meta property="og:title" content="SubCheap – Save Money on Subscriptions">
+  <meta property="og:description" content="Track, compare and cancel expensive subscriptions in seconds. Take control of your recurring payments.">
+  <meta property="og:image" content="https://yourdomain.com/illustration.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="SubCheap">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://yourdomain.com/">
+  <meta name="twitter:title" content="SubCheap – Save Money on Subscriptions">
+  <meta name="twitter:description" content="Track, compare and cancel expensive subscriptions in seconds.">
+  <meta name="twitter:image" content="https://yourdomain.com/illustration.png">
+  <meta name="twitter:image:alt" content="SubCheap App Preview">
+
+  <!-- Additional -->
+  <meta name="format-detection" content="telephone=no">
+  <meta name="mobile-web-app-capable" content="yes">
+    <style>
+        :root {
+            --brand-red: #E30613;
+            --brand-red-dark: #B8050F;
+            --brand-red-light: #FF1A2A;
+            --brand-red-deep: #8F040B;
+            --champagne: #F7E7CE;
+            --gold: #C9A96E;
+            --gold-light: #E8D5B0;
+            --gold-dark: #A8864D;
+            --pink-bg: #FDE7EA;
+            --surface: #FFFFFF;
+            --surface-card: #FFFFFF;
+            --surface-input: #FFFFFF;
+            --surface-track: rgba(255, 255, 255, 0.3);
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9E9E9E;
+            --text-inverse: #FFFFFF;
+            --border-light: #E8E8E8;
+            --border-input: #D9D9D9;
+            --shadow-card: 0 8px 28px rgba(0, 0, 0, 0.08), 0 2px 10px rgba(0, 0, 0, 0.05);
+            --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.06);
+            --shadow-island: 0 4px 20px rgba(0, 0, 0, 0.25);
+            --radius-card: 20px;
+            --radius-input: 14px;
+            --radius-button: 16px;
+            --radius-pill: 28px;
+            --radius-sheet: 32px;
+            --radius-popup: 20px;
+            --radius-island: 24px;
+            --font-family: 'Inter', -apple-system, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
+            --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-spring: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            --duration-fast: 0.2s;
+            --duration-medium: 0.4s;
+            --duration-slow: 0.7s;
+            --z-header: 100;
+            --z-content: 10;
+            --z-loader: 500;
+            --z-sheet: 400;
+            --z-popup: 450;
+            --z-island: 600;
+            --z-bottom-nav: 300;
+        }
+
+        [data-theme="dark"] {
+            --surface: #0D0D0F;
+            --surface-card: #16161A;
+            --surface-input: #1C1C22;
+            --surface-track: rgba(255, 255, 255, 0.06);
+            --text-primary: #F5F5F7;
+            --text-secondary: #A1A1A6;
+            --text-tertiary: #6E6E73;
+            --text-inverse: #FFFFFF;
+            --border-light: #2A2A32;
+            --border-input: #2E2E38;
+            --shadow-card: 0 8px 28px rgba(0, 0, 0, 0.35), 0 2px 10px rgba(0, 0, 0, 0.2);
+            --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.3);
+            --shadow-island: 0 4px 20px rgba(0, 0, 0, 0.5);
+            --pink-bg: #2A1A1E;
+            --brand-red: #E30613;
+            --brand-red-dark: #C40410;
+            --brand-red-light: #FF2D3A;
+            --brand-red-deep: #A3030A;
+            --champagne: #F7E7CE;
+            --gold: #D4B88A;
+            --gold-light: #E8D8B8;
+            --gold-dark: #B89B5A;
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            font-size: 16px;
+            -webkit-text-size-adjust: 100%;
+            overscroll-behavior-y: none;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background: var(--surface);
+            color: var(--text-primary);
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            padding-bottom: 80px;
+            transition: background var(--transition-smooth), color var(--transition-smooth);
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 20% 10%, rgba(227, 6, 19, 0.03) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        [data-theme="dark"] body::before {
+            background: radial-gradient(ellipse at 20% 10%, rgba(227, 6, 19, 0.06) 0%, transparent 60%);
+        }
+
+        /* ─── DYNAMIC ISLAND ─── */
+        #dynamic-island {
+            position: fixed;
+            top: calc(env(safe-area-inset-top) + 12px);
+            left: 50%;
+            transform: translateX(-50%);
+            width: 126px;
+            height: 40px;
+            background: #000000;
+            border-radius: var(--radius-island);
+            z-index: var(--z-island);
+            box-shadow: var(--shadow-island);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            user-select: none;
+            -webkit-user-select: none;
+            pointer-events: auto;
+            opacity: 0;
+            visibility: hidden;
+            transition: width var(--transition-spring), height var(--transition-spring),
+                border-radius var(--transition-spring), opacity var(--duration-fast) ease, visibility var(--duration-fast) ease;
+        }
+
+        #dynamic-island.island-visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #dynamic-island.island-expanded {
+            width: 310px;
+            height: 48px;
+            border-radius: 28px;
+        }
+
+        .island-content {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 0 18px;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity var(--duration-fast) ease;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+        }
+
+        #dynamic-island.island-expanded .island-content {
+            opacity: 1;
+            justify-content: flex-start;
+        }
+
+        .island-icon {
+            font-size: 16px;
+            color: #FFFFFF;
+            flex-shrink: 0;
+            min-width: 16px;
+            text-align: center;
+            animation: island-icon-in 0.3s ease-out forwards;
+        }
+
+        .island-text {
+            font-size: 13px;
+            font-weight: 500;
+            color: #FFFFFF;
+            letter-spacing: 0.01em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 210px;
+            line-height: 1.3;
+        }
+
+        @keyframes island-icon-in {
+            0% { transform: scale(0.5); opacity: 0; }
+            60% { transform: scale(1.15); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* ─── TOP HEADER ─── */
+.brand-header {
+    width: 100%;
+    max-width: 480px;
+
+    background: linear-gradient(
+        165deg,
+        var(--brand-red) 0%,
+        var(--brand-red-dark) 60%,
+        var(--brand-red-deep) 100%
+    );
+
+    /* Space INSIDE the header around the content */
+    padding: calc(env(safe-area-inset-top) + 16px) 16px 16px;
+
+    position: relative;
+    overflow: hidden;
+    z-index: var(--z-header);
+    flex-shrink: 0;
+
+    transition: background var(--transition-smooth);
+}
+
+        .header-wave {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .wave-1 { top: -30px; right: 20%; width: 100px; height: 100px; background: rgba(255,255,255,0.04); }
+        .wave-2 { bottom: -40px; left: 10%; width: 130px; height: 130px; background: rgba(0,0,0,0.05); }
+        .wave-3 { top: 20px; left: -20px; width: 60px; height: 60px; background: rgba(255,255,255,0.03); }
+
+        .header-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .menu-btn, .notif-btn, .theme-toggle {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.25);
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all var(--duration-medium) var(--ease-out);
+            position: relative;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+        .menu-btn:hover, .notif-btn:hover, .theme-toggle:hover {
+            background: rgba(255,255,255,0.22);
+            transform: scale(1.05);
+        }
+        .menu-btn:active, .notif-btn:active, .theme-toggle:active {
+            transform: scale(0.92);
+            transition-duration: 0.1s;
+        }
+
+        .badge {
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            background: #FFFFFF;
+            color: var(--brand-red);
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 10px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            border: 1px solid var(--brand-red);
+            transition: transform var(--duration-fast) ease;
+        }
+
+        .brand-logo-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex: 1;
+            justify-content: center;
+        }
+        .brand-logo {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            object-fit: contain;
+            background: rgba(255,255,255,0.2);
+            padding: 4px;
+        }
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .brand-wordmark {
+            font-size: 17px;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+        .brand-tagline {
+            font-size: 10px;
+            font-weight: 400;
+            color: rgba(255,255,255,0.75);
+            letter-spacing: 0.02em;
+        }
+
+        .header-right {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        /* ─── MAIN CONTENT ─── */
+        .main-content {
+            width: 100%;
+            max-width: 480px;
+            padding: 0 12px;
+            margin-top: -18px;
+            position: relative;
+            z-index: var(--z-content);
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        /* ─── WALLET CARD ─── */
+        .wallet-card {
+            background: var(--surface-card);
+            border-radius: var(--radius-card);
+            box-shadow: var(--shadow-card);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            transition: background var(--transition-smooth), box-shadow var(--transition-smooth);
+        }
+        .wallet-label {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--text-tertiary);
+        }
+        .balance-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .balance-amount {
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+            transition: color var(--transition-smooth);
+        }
+        .balance-amount.hidden {
+            filter: blur(8px);
+            user-select: none;
+        }
+        .eye-toggle {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 18px;
+            transition: color var(--duration-fast);
+        }
+        .eye-toggle:hover { color: var(--brand-red); }
+        .wallet-actions {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .fund-link {
+            color: var(--brand-red);
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            flex: 1;
+            justify-content: center;
+        }
+        .history-btn {
+            background: var(--brand-red);
+            color: #FFFFFF;
+            border: none;
+            border-radius: var(--radius-pill);
+            padding: 10px 18px;
+            font-family: var(--font-family);
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            transition: all var(--duration-medium);
+            flex: 1;
+            justify-content: center;
+        }
+        .history-btn:active { transform: scale(0.97); }
+
+        /* ─── PROMO BANNER ─── */
+        .promo-banner {
+            background: linear-gradient(135deg, var(--brand-red) 0%, #E34250 100%);
+            border-radius: var(--radius-card);
+            padding: 18px 18px 14px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            position: relative;
+            overflow: hidden;
+            color: #FFFFFF;
+        }
+        .promo-text {
+            flex: 1;
+        }
+        .promo-headline {
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+            margin-bottom: 4px;
+        }
+        .promo-sub {
+            font-size: 12px;
+            opacity: 0.9;
+            letter-spacing: 0.04em;
+        }
+        .promo-icon {
+            font-size: 40px;
+            color: rgba(255,255,255,0.9);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        .promo-dots {
+            position: absolute;
+            bottom: 8px;
+            left: 18px;
+            display: flex;
+            gap: 5px;
+        }
+        .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.4);
+        }
+        .dot.active { background: #FFFFFF; }
+
+        /* ─── PRODUCT CARDS ─── */
+        .section-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.01em;
+            margin: 4px 0 2px;
+        }
+        .product-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        .product-card {
+            background: var(--surface-card);
+            border-radius: var(--radius-card);
+            box-shadow: var(--shadow-card);
+            padding: 16px 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            transition: background var(--transition-smooth), box-shadow var(--transition-smooth);
+        }
+        .product-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--pink-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--brand-red);
+            font-size: 20px;
+        }
+        .product-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .product-desc {
+            font-size: 12px;
+            color: var(--text-secondary);
+            line-height: 1.4;
+            flex: 1;
+        }
+        .product-btn {
+            background: var(--brand-red);
+            color: #FFFFFF;
+            border: none;
+            border-radius: var(--radius-button);
+            padding: 10px;
+            font-family: var(--font-family);
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            cursor: pointer;
+            transition: all var(--duration-medium);
+        }
+        .product-btn:active { transform: scale(0.96); }
+
+        /* ─── QUICK ACCESS ─── */
+        .quick-card {
+            background: var(--surface-card);
+            border-radius: var(--radius-card);
+            box-shadow: var(--shadow-card);
+            display: flex;
+            justify-content: space-around;
+            padding: 14px 8px;
+            transition: background var(--transition-smooth), box-shadow var(--transition-smooth);
+        }
+        .quick-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            flex: 1;
+            transition: transform var(--duration-fast);
+        }
+        .quick-item:active { transform: scale(0.95); }
+        .quick-icon {
+            font-size: 18px;
+            color: var(--brand-red);
+        }
+        .quick-label {
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        /* ─── BOTTOM TAB BAR ─── */
+        .bottom-tab {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--surface-card);
+            border-top: 1px solid var(--border-light);
+            z-index: var(--z-bottom-nav);
+            display: flex;
+            justify-content: space-around;
+            padding: 8px 0 calc(env(safe-area-inset-bottom) + 8px);
+            transition: background var(--transition-smooth), border-color var(--transition-smooth);
+        }
+        .tab-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            font-size: 11px;
+            color: var(--text-tertiary);
+            cursor: pointer;
+            transition: color var(--duration-fast);
+            flex: 1;
+        }
+        .tab-item i {
+            font-size: 20px;
+        }
+        .tab-item.active {
+            color: var(--brand-red);
+            font-weight: 600;
+        }
+        .tab-item.active i {
+            text-shadow: 0 2px 6px rgba(227,6,19,0.3);
+        }
+
+        /* ─── SHEET & MODAL OVERLAYS ─── */
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            z-index: var(--z-sheet);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity var(--duration-medium), visibility var(--duration-medium);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .sheet {
+            width: 100%;
+            max-width: 480px;
+            background: var(--surface-card);
+            border-radius: var(--radius-sheet) var(--radius-sheet) 0 0;
+            padding: 20px 18px calc(20px + env(safe-area-inset-bottom));
+            transform: translateY(100%);
+            transition: transform var(--transition-spring);
+            max-height: 85vh;
+            overflow-y: auto;
+            position: relative;
+        }
+        .overlay.active .sheet {
+            transform: translateY(0);
+        }
+        .sheet-grabber {
+            width: 36px;
+            height: 4px;
+            border-radius: 4px;
+            background: var(--border-light);
+            margin: 0 auto 16px;
+        }
+        .sheet-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .sheet-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .close-sheet {
+            background: none;
+            border: none;
+            font-size: 20px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            padding: 4px;
+        }
+        .close-sheet:active { transform: scale(0.9); }
+
+        /* ─── PIN MODAL ─── */
+        .pin-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(8px);
+            z-index: var(--z-popup);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity var(--duration-medium), visibility var(--duration-medium);
+        }
+        .pin-modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .pin-modal {
+            background: var(--surface-card);
+            border-radius: var(--radius-popup);
+            padding: 24px;
+            width: 100%;
+            max-width: 360px;
+            text-align: center;
+            transform: scale(0.9);
+            transition: transform var(--transition-spring);
+        }
+        .pin-modal-overlay.active .pin-modal {
+            transform: scale(1);
+        }
+        .pin-inputs {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .pin-digit {
+            width: 48px;
+            height: 56px;
+            border-radius: 12px;
+            border: 2px solid var(--border-input);
+            background: var(--surface-input);
+            font-size: 22px;
+            font-weight: 700;
+            text-align: center;
+            color: var(--text-primary);
+            outline: none;
+            transition: border-color var(--duration-fast);
+        }
+        .pin-digit:focus {
+            border-color: var(--brand-red);
+            box-shadow: 0 0 0 4px rgba(227,6,19,0.1);
+        }
+        .pin-submit {
+            background: var(--brand-red);
+            color: #fff;
+            border: none;
+            border-radius: var(--radius-button);
+            padding: 12px;
+            width: 100%;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+        .pin-submit:disabled { opacity: 0.5; pointer-events: none; }
+
+        /* ─── LOADER ─── */
+        .loader-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.55);
+            backdrop-filter: blur(8px);
+            z-index: var(--z-loader);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity var(--duration-medium), visibility var(--duration-medium);
+        }
+        .loader-overlay.active { opacity: 1; visibility: visible; }
+        .loader-ring {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 3px solid rgba(255,255,255,0.2);
+            border-top-color: var(--brand-red);
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+        .loader-text { color: #fff; font-weight: 500; letter-spacing: 0.04em; }
+
+        /* ─── NETWORK SELECTION ─── */
+        .network-options {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .network-card {
+            flex: 1 1 40%;
+            background: var(--surface-input);
+            border: 2px solid var(--border-light);
+            border-radius: 16px;
+            padding: 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: all var(--duration-fast);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+        .network-card.selected {
+            border-color: var(--brand-red);
+            box-shadow: 0 0 0 4px rgba(227,6,19,0.1);
+        }
+        .network-logo {
+            width: 44px;
+            height: 44px;
+            object-fit: contain;
+            border-radius: 8px;
+            background: #fff;
+            padding: 2px;
+        }
+        .network-name {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .bundle-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 12px;
+        }
+        .bundle-item {
+            background: var(--surface-input);
+            border: 2px solid var(--border-light);
+            border-radius: 14px;
+            padding: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: border-color var(--duration-fast);
+        }
+        .bundle-item.selected {
+            border-color: var(--brand-red);
+            background: rgba(227,6,19,0.04);
+        }
+        .bundle-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .bundle-gb {
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .bundle-price {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .phone-input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-top: 10px;
+        }
+        .phone-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+        }
+        .phone-input {
+            width: 100%;
+            padding: 12px;
+            border-radius: var(--radius-input);
+            border: 2px solid var(--border-input);
+            background: var(--surface-input);
+            color: var(--text-primary);
+            font-size: 15px;
+            outline: none;
+            transition: border-color var(--duration-fast);
+        }
+        .phone-input:focus {
+            border-color: var(--brand-red);
+            box-shadow: 0 0 0 4px rgba(227,6,19,0.1);
+        }
+
+        .buy-button {
+            background: var(--brand-red);
+            color: #fff;
+            border: none;
+            border-radius: var(--radius-button);
+            padding: 14px;
+            width: 100%;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 16px;
+            transition: all var(--duration-medium);
+        }
+        .buy-button:active { transform: scale(0.97); }
+        .buy-button:disabled { opacity: 0.6; pointer-events: none; }
+
+        /* ─── TRANSACTION LIST ─── */
+        .transaction-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+        .transaction-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--pink-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--brand-red);
+            font-size: 16px;
+        }
+        .transaction-detail {
+            flex: 1;
+        }
+        .transaction-title {
+            font-weight: 600;
+            font-size: 14px;
+        }
+        .transaction-date {
+            font-size: 11px;
+            color: var(--text-tertiary);
+        }
+        .transaction-amount {
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--brand-red);
+        }
+        .empty-state {
+            text-align: center;
+            padding: 30px 20px;
+            color: var(--text-tertiary);
+        }
+        .empty-icon {
+            font-size: 40px;
+            margin-bottom: 12px;
+            color: var(--border-input);
+        }
+
+        /* Responsive */
+        @media (min-width: 480px) {
+            .main-content { padding: 0 16px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        .promo-illustration {
+    width: 148px;
+    height: 78px;
+    object-fit: contain;
+    flex-shrink: 0;
+    display: block;
+    margin-left: auto;
+}
+
+/* ===== Install Popup ===== */
+#install-popup {
+  position: fixed;
+  inset: 0;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+#install-popup.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.install-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 28px 24px;
+  max-width: 340px;
+  width: 90%;
+  text-align: center;
+  box-shadow: var(--shadow);
+  border: 3px solid var(--primary);
+  animation: popIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+.install-card img {
+  width: 72px;
+  height: 72px;
+  margin-bottom: 12px;
+}
+
+.install-card h2 {
+  font-size: 1.4rem;
+  color: var(--primary);
+  margin-bottom: 6px;
+}
+
+.install-card p {
+  font-size: 0.95rem;
+  color: #4b5563;
+  margin-bottom: 20px;
+}
+
+.install-btns {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.btn-install {
+  background: var(--primary);
+  color: red;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-install:hover {
+  background: var(--primary-dark);
+}
+
+.btn-later {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-later:hover {
+  background: white;
+}
+    </style>
+</head>
+<body>
+
+    <!-- DYNAMIC ISLAND -->
+    <div id="dynamic-island" role="status" aria-live="polite">
+        <div class="island-content">
+            <i class="fas fa-info-circle island-icon" id="island-icon"></i>
+            <span class="island-text" id="island-text">Notification</span>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="brand-header">
+        <div class="header-wave wave-1"></div>
+        <div class="header-wave wave-2"></div>
+        <div class="header-wave wave-3"></div>
+        <div class="header-top">
+            <button class="menu-btn" id="menu-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+            <div class="brand-logo-group">
+                <img src="https://cdn-icons-png.flaticon.com/128/18343/18343315.png" alt="SUBCHEAP logo" class="brand-logo" width="38" height="38">
+                <div class="brand-text">
+                    <span class="brand-wordmark">SUBCHEAP</span>
+                    <span class="brand-tagline">Airtime &amp; Data made cheap!</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon" id="theme-icon"></i></button>
+                <button class="notif-btn" id="notif-btn" aria-label="Notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge" id="notif-badge" style="display:none;">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+</br>
+</br>
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <!-- Wallet Card -->
+        <section class="wallet-card" aria-label="Wallet balance">
+            <span class="wallet-label">Wallet Balance</span>
+            <div class="balance-row">
+                <span class="balance-amount" id="balance-amount">₦0.00</span>
+                <button class="eye-toggle" id="eye-toggle" aria-label="Toggle balance visibility"><i class="fas fa-eye"></i></button>
+            </div>
+            <div class="wallet-actions">
+                <a href="fund.html" class="fund-link"><i class="fas fa-plus-circle"></i> Fund Wallet</a>
+                <button class="history-btn" id="history-btn"><i class="fas fa-receipt"></i> Transaction History</button>
+            </div>
+        </section>
+
+        <!-- Promo Banner -->
+      <section class="promo-banner" aria-label="Promotional banner">
+    <div class="promo-text">
+        <div class="promo-headline">Always Get the Best Deals on Airtime & Data</div>
+        <div class="promo-sub">Fast • Secure • Reliable</div>
+    </div>
+
+    <img 
+        src="illustration.png" 
+        alt="Promotion illustration" 
+        class="promo-illustration"
+    >
+
+<!--     <div class="promo-dots">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+</div> -->
+</section>
+
+        <!-- Product Cards -->
+        <section aria-label="Buy products">
+            <h2 class="section-title">What would you like to buy?</h2>
+            <div class="product-row">
+                <div class="product-card">
+                    <div class="product-icon"><i class="fas fa-phone-alt"></i></div>
+                    <div class="product-title">Airtime</div>
+                    <div class="product-desc">Buy airtime for yourself or others</div>
+                    <button class="product-btn" id="airtime-btn"><i class="fas fa-phone"></i> Buy Airtime</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon"><i class="fas fa-wifi"></i></div>
+                    <div class="product-title">Data</div>
+                    <div class="product-desc">Buy data bundles at the best prices</div>
+                    <button class="product-btn" id="data-btn"><i class="fas fa-database"></i> Buy Data</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Access -->
+        <section class="quick-card" aria-label="Quick access">
+            <div class="quick-item" id="refer-link"><i class="fas fa-gift quick-icon"></i><span class="quick-label">Refer & Earn</span></div>
+            <div class="quick-item" id="support-link"><i class="fas fa-headset quick-icon"></i><span class="quick-label">Support</span></div>
+            <div class="quick-item" id="about-link"><i class="fas fa-info-circle quick-icon"></i><span class="quick-label">About Us</span></div>
+        </section>
+    </main>
+
+    <!-- BOTTOM TAB BAR -->
+    <nav class="bottom-tab" aria-label="Bottom navigation">
+        <div class="tab-item active" id="tab-home"><i class="fas fa-home"></i><span>Home</span></div>
+        <div class="tab-item" id="tab-transactions"><i class="fas fa-list"></i><span>Transactions</span></div>
+        <div class="tab-item" id="tab-wallet"><i class="fas fa-wallet"></i><span>Wallet</span></div>
+        <div class="tab-item" id="tab-profile"><i class="fas fa-user"></i><span>Profile</span></div>
+    </nav>
+
+    <!-- TRANSACTION HISTORY / NOTIFICATIONS BOTTOM SHEET -->
+    <div class="overlay" id="history-sheet-overlay">
+        <div class="sheet">
+            <div class="sheet-grabber"></div>
+            <div class="sheet-header">
+                <span class="sheet-title" id="history-sheet-title">Transaction History</span>
+                <button class="close-sheet" data-close="history-sheet-overlay"><i class="fas fa-times"></i></button>
+            </div>
+            <div id="history-sheet-content" style="max-height: 60vh; overflow-y: auto;"></div>
+        </div>
+    </div>
+
+    <!-- DATA / AIRTIME PRODUCT SHEET -->
+    <div class="overlay" id="product-sheet-overlay">
+        <div class="sheet">
+            <div class="sheet-grabber"></div>
+            <div class="sheet-header">
+                <span class="sheet-title" id="product-sheet-title">Select Network</span>
+                <button class="close-sheet" data-close="product-sheet-overlay"><i class="fas fa-times"></i></button>
+            </div>
+            <div id="product-sheet-content"></div>
+        </div>
+    </div>
+
+    <!-- PIN MODAL -->
+    <div class="pin-modal-overlay" id="pin-modal-overlay">
+        <div class="pin-modal">
+            <h3 style="font-size:18px; font-weight:700; margin-bottom:6px;">Enter PIN</h3>
+            <p style="color:var(--text-secondary); font-size:13px;">Enter your 4-digit transaction PIN</p>
+            <div class="pin-inputs" id="pin-inputs">
+                <input class="pin-digit" type="password" maxlength="1" inputmode="numeric" placeholder="•" data-pin="0">
+                <input class="pin-digit" type="password" maxlength="1" inputmode="numeric" placeholder="•" data-pin="1">
+                <input class="pin-digit" type="password" maxlength="1" inputmode="numeric" placeholder="•" data-pin="2">
+                <input class="pin-digit" type="password" maxlength="1" inputmode="numeric" placeholder="•" data-pin="3">
+            </div>
+            <button class="pin-submit" id="pin-submit-btn" disabled>Proceed</button>
+        </div>
+    </div>
+
+    <!-- LOADER OVERLAY -->
+    <div class="loader-overlay" id="loader-overlay">
+        <div class="loader-ring"></div>
+        <span class="loader-text" id="loader-text">Processing…</span>
+    </div>
+
+    <!-- ABOUT US POPUP -->
+    <div class="pin-modal-overlay" id="about-overlay" style="z-index: 480;">
+        <div class="pin-modal" style="max-width: 400px; text-align: left;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+                <h3 style="font-size:18px; font-weight:700;">About SUBCHEAP</h3>
+                <button id="close-about" style="background:none; border:none; font-size:20px; cursor:pointer;">&times;</button>
+            </div>
+            <p style="color:var(--text-secondary); font-size:14px; line-height:1.6;">SUBCHEAP is your trusted platform for affordable airtime and data. We provide the best deals from top networks, ensuring fast and secure transactions. Our mission is to make communication accessible and cheap for everyone.</p>
+        </div>
+    </div>
+
+<!-- Install Popup -->
+<div id="install-popup">
+  <div class="install-card">
+    <img src="https://cdn-icons-png.flaticon.com/128/18343/18343315.png" alt="SubCheap">
+    <h2>Install SubCheap</h2>
+    <p>Get the full app experience – faster, offline-ready & always one tap away.</p>
+    <div class="install-btns">
+      <button class="btn-install" onclick="installApp()">Install Now</button>
+      <button class="btn-later" onclick="dismissInstall()">Later</button>
+    </div>
+  </div>
+</div>
+    <script>
+        (function() {
+            'use strict';
+
+            // ─── STORAGE KEYS ───
+            const KEYS = {
+                USERS_PREFIX: 'subcheap_user_',
+                SESSION: 'subcheap_session',
+                THEME: 'subcheap_theme',
+                TRANSACTIONS: 'subcheap_transactions',
+                NOTIFICATIONS: 'subcheap_notifications',
+                BENEFICIARIES: 'subcheap_beneficiaries',
+            };
+
+            // ─── NETWORK IMAGES ───
+            const NETWORK_IMAGES = {
+                mtn: 'https://i.pinimg.com/474x/0a/f0/0e/0af00e1d78100d4019d3344873902d5a.jpg',
+                airtel: 'https://i.pinimg.com/474x/f2/d4/dd/f2d4dd8358440e39f627dc9a15be879c.jpg'
+            };
+
+            // ─── DATA BUNDLES ───
+            const MTN_BUNDLES = [
+                { gb: 40, price: 3000 },
+                { gb: 80, price: 6000 },
+                { gb: 120, price: 9000 },
+                { gb: 160, price: 12000 },
+                { gb: 200, price: 15000 },
+                { gb: 240, price: 18000 }
+            ];
+            const AIRTEL_DISCOUNT = 0.07; // 7% discount
+
+            // ─── DOM REFS ───
+            const dynamicIsland = document.getElementById('dynamic-island');
+            const islandIcon = document.getElementById('island-icon');
+            const islandText = document.getElementById('island-text');
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeIcon = document.getElementById('theme-icon');
+            const balanceAmount = document.getElementById('balance-amount');
+            const eyeToggle = document.getElementById('eye-toggle');
+            const notifBtn = document.getElementById('notif-btn');
+            const notifBadge = document.getElementById('notif-badge');
+            const menuBtn = document.getElementById('menu-btn');
+            const historyBtn = document.getElementById('history-btn');
+            const airtimeBtn = document.getElementById('airtime-btn');
+            const dataBtn = document.getElementById('data-btn');
+            const referLink = document.getElementById('refer-link');
+            const supportLink = document.getElementById('support-link');
+            const aboutLink = document.getElementById('about-link');
+            const historySheetOverlay = document.getElementById('history-sheet-overlay');
+            const historySheetTitle = document.getElementById('history-sheet-title');
+            const historySheetContent = document.getElementById('history-sheet-content');
+            const productSheetOverlay = document.getElementById('product-sheet-overlay');
+            const productSheetTitle = document.getElementById('product-sheet-title');
+            const productSheetContent = document.getElementById('product-sheet-content');
+            const pinModalOverlay = document.getElementById('pin-modal-overlay');
+            const pinInputs = document.getElementById('pin-inputs').querySelectorAll('.pin-digit');
+            const pinSubmitBtn = document.getElementById('pin-submit-btn');
+            const loaderOverlay = document.getElementById('loader-overlay');
+            const loaderText = document.getElementById('loader-text');
+            const aboutOverlay = document.getElementById('about-overlay');
+            const closeAbout = document.getElementById('close-about');
+            const tabHome = document.getElementById('tab-home');
+            const tabTransactions = document.getElementById('tab-transactions');
+            const tabWallet = document.getElementById('tab-wallet');
+            const tabProfile = document.getElementById('tab-profile');
+
+            // ─── STATE ───
+            let currentUser = null;
+            let islandTimeout = null;
+            let balanceVisible = true;
+            let selectedNetwork = null;
+            let selectedBundle = null;
+            let pendingTransaction = null;
+            let pinDigits = ['', '', '', ''];
+
+            // ─── INIT ───
+            function init() {
+                // Theme
+                const savedTheme = localStorage.getItem(KEYS.THEME) || 'light';
+                applyTheme(savedTheme);
+
+                // Check session
+                const sessionPhone = localStorage.getItem(KEYS.SESSION);
+                if (!sessionPhone) {
+                    window.location.href = 'index.html';
+                    return;
+                }
+                const userKey = KEYS.USERS_PREFIX + normalizePhone(sessionPhone);
+                const userData = localStorage.getItem(userKey);
+                if (!userData) {
+                    window.location.href = 'index.html';
+                    return;
+                }
+                currentUser = JSON.parse(userData);
+                // Ensure balance
+                if (typeof currentUser.balance !== 'number') currentUser.balance = 0.0;
+                saveCurrentUser();
+
+                // Update balance display
+                updateBalanceDisplay();
+                updateNotifBadge();
+                updateTransactionsCount();
+
+                // Event listeners
+                themeToggle.addEventListener('click', toggleTheme);
+                eyeToggle.addEventListener('click', toggleBalanceVisibility);
+                historyBtn.addEventListener('click', () => openTransactionSheet());
+                tabTransactions.addEventListener('click', () => openTransactionSheet());
+                tabWallet.addEventListener('click', () => window.location.href = 'fund.html');
+                tabProfile.addEventListener('click', () => window.location.href = 'profile.html');
+                tabHome.addEventListener('click', () => { /* stay */ });
+
+                airtimeBtn.addEventListener('click', () => openProductSheet('airtime'));
+                dataBtn.addEventListener('click', () => openProductSheet('data'));
+
+                menuBtn.addEventListener('click', () => showIsland('Menu coming soon', 'fa-bars'));
+                referLink.addEventListener('click', () => showIsland('Refer & Earn coming soon!', 'fa-gift'));
+                supportLink.addEventListener('click', () => window.open('https://vm.tiktok.com/ZS9k5H3DG7Qbj-gMmbh/', '_blank'));
+                aboutLink.addEventListener('click', () => aboutOverlay.classList.add('active'));
+                closeAbout.addEventListener('click', () => aboutOverlay.classList.remove('active'));
+
+                // Close overlays on backdrop click
+                document.querySelectorAll('.overlay').forEach(overlay => {
+                    overlay.addEventListener('click', function(e) {
+                        if (e.target === this) this.classList.remove('active');
+                    });
+                });
+                document.querySelectorAll('[data-close]').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const id = this.getAttribute('data-close');
+                        document.getElementById(id).classList.remove('active');
+                    });
+                });
+
+                // PIN inputs
+                pinInputs.forEach((input, index) => {
+                    input.addEventListener('input', function() {
+                        const val = this.value.replace(/\D/g, '');
+                        if (val.length > 1) this.value = val.slice(-1);
+                        pinDigits[index] = this.value;
+                        if (this.value && index < pinInputs.length - 1) pinInputs[index + 1].focus();
+                        updatePinSubmit();
+                    });
+                    input.addEventListener('keydown', function(e) {
+                        if (e.key === 'Backspace' && !this.value && index > 0) {
+                            pinInputs[index - 1].focus();
+                            pinDigits[index - 1] = '';
+                            updatePinSubmit();
+                        }
+                        if (e.key === 'Enter' && !pinSubmitBtn.disabled) handlePinSubmit();
+                    });
+                });
+                pinSubmitBtn.addEventListener('click', handlePinSubmit);
+
+                // Initialize product sheet close
+                document.querySelectorAll('.close-sheet').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const overlay = this.closest('.overlay');
+                        if (overlay) overlay.classList.remove('active');
+                    });
+                });
+
+                // Initial balance load
+                console.log('SUBCHEAP Home ready');
+            }
+
+            function normalizePhone(phone) {
+                return String(phone).replace(/[\s\-()]/g, '').replace(/^\+234/, '0').trim();
+            }
+
+            function saveCurrentUser() {
+                const userKey = KEYS.USERS_PREFIX + normalizePhone(currentUser.phone);
+                localStorage.setItem(userKey, JSON.stringify(currentUser));
+            }
+
+            function getUserByPhone(phone) {
+                const userKey = KEYS.USERS_PREFIX + normalizePhone(phone);
+                const data = localStorage.getItem(userKey);
+                return data ? JSON.parse(data) : null;
+            }
+
+            function getSessionPhone() {
+                return localStorage.getItem(KEYS.SESSION);
+            }
+
+            // ─── THEME ───
+            function applyTheme(theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+                themeIcon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+                themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+                localStorage.setItem(KEYS.THEME, theme);
+            }
+
+            function toggleTheme() {
+                const current = document.documentElement.getAttribute('data-theme') || 'light';
+                applyTheme(current === 'light' ? 'dark' : 'light');
+            }
+
+            // ─── DYNAMIC ISLAND ───
+            function showIsland(message, iconClass = 'fa-info-circle', duration = 3200) {
+                if (islandTimeout) clearTimeout(islandTimeout);
+                islandIcon.className = 'fas ' + iconClass + ' island-icon';
+                islandText.textContent = message;
+                dynamicIsland.classList.add('island-visible');
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => dynamicIsland.classList.add('island-expanded'));
+                });
+                islandTimeout = setTimeout(() => {
+                    dynamicIsland.classList.remove('island-expanded');
+                    setTimeout(() => dynamicIsland.classList.remove('island-visible'), 350);
+                    islandTimeout = null;
+                }, duration);
+            }
+
+            // ─── BALANCE ───
+            function updateBalanceDisplay() {
+                if (currentUser) {
+                    const formatted = '₦' + currentUser.balance.toFixed(2);
+                    balanceAmount.textContent = formatted;
+                    balanceAmount.classList.toggle('hidden', !balanceVisible);
+                }
+            }
+
+            function toggleBalanceVisibility() {
+                balanceVisible = !balanceVisible;
+                balanceAmount.classList.toggle('hidden', !balanceVisible);
+                eyeToggle.innerHTML = balanceVisible ? '<i class="fas fa-eye"></i>' : '<i class="fas fa-eye-slash"></i>';
+            }
+
+            // ─── NOTIFICATIONS ───
+            function getNotifications() {
+                try {
+                    return JSON.parse(localStorage.getItem(KEYS.NOTIFICATIONS)) || [];
+                } catch { return []; }
+            }
+
+            function saveNotifications(notifs) {
+                localStorage.setItem(KEYS.NOTIFICATIONS, JSON.stringify(notifs));
+            }
+
+            function addNotification(message, type = 'info') {
+                const notifs = getNotifications();
+                notifs.unshift({ message, type, date: new Date().toISOString() });
+                saveNotifications(notifs);
+                updateNotifBadge();
+            }
+
+            function updateNotifBadge() {
+                const notifs = getNotifications();
+                const count = notifs.length;
+                notifBadge.textContent = count;
+                notifBadge.style.display = count > 0 ? 'flex' : 'none';
+            }
+
+            notifBtn.addEventListener('click', () => openNotificationSheet());
+
+            function openNotificationSheet() {
+                historySheetTitle.textContent = 'Notifications';
+                const notifs = getNotifications();
+                historySheetContent.innerHTML = '';
+                if (notifs.length === 0) {
+                    historySheetContent.innerHTML = '<div class="empty-state"><i class="fas fa-bell-slash empty-icon"></i><p>No notifications</p></div>';
+                } else {
+                    notifs.forEach(n => {
+                        const div = document.createElement('div');
+                        div.className = 'transaction-item';
+                        div.innerHTML = `
+                            <div class="transaction-icon"><i class="fas ${n.type === 'airtime' ? 'fa-phone' : n.type === 'data' ? 'fa-wifi' : 'fa-info-circle'}"></i></div>
+                            <div class="transaction-detail">
+                                <div class="transaction-title">${n.message}</div>
+                                <div class="transaction-date">${new Date(n.date).toLocaleString()}</div>
+                            </div>
+                        `;
+                        historySheetContent.appendChild(div);
+                    });
+                }
+                historySheetOverlay.classList.add('active');
+            }
+
+            // ─── TRANSACTIONS ───
+            function getTransactions() {
+                try { return JSON.parse(localStorage.getItem(KEYS.TRANSACTIONS)) || []; } catch { return []; }
+            }
+
+            function saveTransaction(tx) {
+                const txs = getTransactions();
+                txs.unshift(tx);
+                localStorage.setItem(KEYS.TRANSACTIONS, JSON.stringify(txs));
+            }
+
+            function updateTransactionsCount() {
+                // nothing needed
+            }
+
+            function openTransactionSheet() {
+                historySheetTitle.textContent = 'Transaction History';
+                const txs = getTransactions();
+                historySheetContent.innerHTML = '';
+                if (txs.length === 0) {
+                    historySheetContent.innerHTML = '<div class="empty-state"><i class="fas fa-receipt empty-icon"></i><p>No transactions yet</p></div>';
+                } else {
+                    txs.forEach(tx => {
+                        const div = document.createElement('div');
+                        div.className = 'transaction-item';
+                        const isCredit = tx.type === 'credit';
+                        div.innerHTML = `
+                            <div class="transaction-icon"><i class="fas ${tx.type === 'airtime' ? 'fa-phone' : tx.type === 'data' ? 'fa-wifi' : isCredit ? 'fa-plus-circle' : 'fa-minus-circle'}"></i></div>
+                            <div class="transaction-detail">
+                                <div class="transaction-title">${tx.description}</div>
+                                <div class="transaction-date">${new Date(tx.date).toLocaleString()}</div>
+                            </div>
+                            <div class="transaction-amount" style="color:${isCredit ? '#10B981' : '#E30613'}">${isCredit ? '+' : '-'}₦${tx.amount.toFixed(2)}</div>
+                        `;
+                        historySheetContent.appendChild(div);
+                    });
+                }
+                historySheetOverlay.classList.add('active');
+            }
+
+            // ─── PRODUCT SHEET ───
+            function openProductSheet(type) {
+                productSheetTitle.textContent = type === 'airtime' ? 'Buy Airtime' : 'Buy Data';
+                selectedNetwork = null;
+                selectedBundle = null;
+                productSheetContent.innerHTML = '';
+                if (type === 'airtime') {
+                    renderAirtimeSheet();
+                } else {
+                    renderDataSheet();
+                }
+                productSheetOverlay.classList.add('active');
+            }
+
+            function renderNetworkSelection(callback) {
+                const html = `
+                    <div class="network-options">
+                        <div class="network-card" data-network="mtn">
+                            <img src="${NETWORK_IMAGES.mtn}" alt="MTN" class="network-logo" onerror="this.style.display='none'">
+                            <span class="network-name">MTN</span>
+                        </div>
+                        <div class="network-card" data-network="airtel">
+                            <img src="${NETWORK_IMAGES.airtel}" alt="Airtel" class="network-logo" onerror="this.style.display='none'">
+                            <span class="network-name">Airtel</span>
+                        </div>
+                    </div>
+                `;
+                productSheetContent.innerHTML = html;
+                document.querySelectorAll('.network-card').forEach(card => {
+                    card.addEventListener('click', function() {
+                        document.querySelectorAll('.network-card').forEach(c => c.classList.remove('selected'));
+                        this.classList.add('selected');
+                        selectedNetwork = this.getAttribute('data-network');
+                        if (callback) callback(selectedNetwork);
+                    });
+                });
+            }
+
+            function renderAirtimeSheet() {
+                renderNetworkSelection(() => {
+                    // after network selection show amount and phone input
+                    const amount = 3000;
+                    const discount = 0.15; // 15% discount for vendor
+                    const payAmount = amount * (1 - discount);
+                    productSheetContent.innerHTML += `
+                        <div style="margin-top:16px;">
+                            <div style="background:var(--pink-bg); border-radius:12px; padding:12px; text-align:center;">
+                                <span style="font-size:14px;">Airtime Value: ₦${amount}</span><br>
+                                <span style="font-size:14px; font-weight:700; color:var(--brand-red);">You Pay: ₦${payAmount.toFixed(2)}</span>
+                            </div>
+                            <div class="phone-input-group">
+                                <label class="phone-label">Phone Number</label>
+                                <input type="tel" class="phone-input" id="phone-input" placeholder="Enter recipient number" inputmode="numeric">
+                            </div>
+                            <button class="buy-button" id="buy-airtime-btn">Buy Airtime</button>
+                        </div>
+                    `;
+                    document.getElementById('buy-airtime-btn').addEventListener('click', () => {
+                        const phone = document.getElementById('phone-input').value.trim();
+                        if (!phone) return showIsland('Enter phone number', 'fa-exclamation-triangle');
+                        pendingTransaction = {
+                            type: 'airtime',
+                            network: selectedNetwork,
+                            phone: phone,
+                            amount: payAmount,
+                            value: amount,
+                            discount: discount * 100,
+                            description: `${selectedNetwork.toUpperCase()} Airtime ₦${amount}`,
+                            date: new Date().toISOString()
+                        };
+                        openPinModal();
+                    });
+                });
+            }
+
+            function renderDataSheet() {
+                renderNetworkSelection((network) => {
+                    const isMTN = network === 'mtn';
+                    const bundles = isMTN ? MTN_BUNDLES : MTN_BUNDLES.map(b => ({ gb: b.gb, price: Math.round(b.price * (1 - AIRTEL_DISCOUNT)) }));
+                    const discountInfo = isMTN ? '' : '<span style="color:#10B981; font-size:12px;"> (7% discount)</span>';
+                    let bundleHtml = bundles.map((b, idx) => `
+                        <div class="bundle-item" data-index="${idx}" data-gb="${b.gb}" data-price="${b.price}">
+                            <div class="bundle-info">
+                                <span class="bundle-gb">${b.gb}GB</span>
+                                <span class="bundle-price">₦${b.price.toFixed(2)}${discountInfo}</span>
+                            </div>
+                        </div>
+                    `).join('');
+                    productSheetContent.innerHTML += `
+                        <div style="margin-top:16px;">
+                            <div class="bundle-list">${bundleHtml}</div>
+                            <div class="phone-input-group">
+                                <label class="phone-label">Phone Number</label>
+                                <input type="tel" class="phone-input" id="data-phone-input" placeholder="Enter recipient number" inputmode="numeric">
+                            </div>
+                            <button class="buy-button" id="buy-data-btn" disabled>Select Bundle</button>
+                        </div>
+                    `;
+                    document.querySelectorAll('.bundle-item').forEach(item => {
+                        item.addEventListener('click', function() {
+                            document.querySelectorAll('.bundle-item').forEach(i => i.classList.remove('selected'));
+                            this.classList.add('selected');
+                            selectedBundle = {
+                                gb: parseInt(this.getAttribute('data-gb')),
+                                price: parseFloat(this.getAttribute('data-price'))
+                            };
+                            document.getElementById('buy-data-btn').disabled = false;
+                            document.getElementById('buy-data-btn').textContent = `Buy ${selectedBundle.gb}GB for ₦${selectedBundle.price.toFixed(2)}`;
+                        });
+                    });
+                    document.getElementById('buy-data-btn').addEventListener('click', () => {
+                        if (!selectedBundle) return;
+                        const phone = document.getElementById('data-phone-input').value.trim();
+                        if (!phone) return showIsland('Enter phone number', 'fa-exclamation-triangle');
+                        pendingTransaction = {
+                            type: 'data',
+                            network: selectedNetwork,
+                            phone: phone,
+                            amount: selectedBundle.price,
+                            value: selectedBundle.gb,
+                            description: `${selectedNetwork.toUpperCase()} Data ${selectedBundle.gb}GB`,
+                            date: new Date().toISOString()
+                        };
+                        openPinModal();
+                    });
+                });
+            }
+
+            // ─── PIN MODAL ───
+            function openPinModal() {
+                pinDigits = ['', '', '', ''];
+                pinInputs.forEach(inp => { inp.value = ''; });
+                updatePinSubmit();
+                pinModalOverlay.classList.add('active');
+                setTimeout(() => pinInputs[0].focus(), 300);
+            }
+
+            function updatePinSubmit() {
+                pinSubmitBtn.disabled = !pinDigits.every(d => d !== '');
+            }
+
+            function handlePinSubmit() {
+                if (pinSubmitBtn.disabled) return;
+                const enteredPin = pinDigits.join('');
+                if (enteredPin.length !== 4 || !/^\d{4}$/.test(enteredPin)) {
+                    showIsland('Invalid PIN', 'fa-times-circle');
+                    return;
+                }
+                if (enteredPin !== currentUser.pin) {
+                    showIsland('Incorrect PIN', 'fa-exclamation-triangle');
+                    return;
+                }
+                pinModalOverlay.classList.remove('active');
+                processTransaction();
+            }
+
+            // ─── PROCESS TRANSACTION ───
+            function processTransaction() {
+                showLoader('Processing transaction…');
+                setTimeout(() => {
+                    hideLoader();
+                    const amount = pendingTransaction.amount;
+                    if (currentUser.balance < amount) {
+                        showIsland('Insufficient balance. Fund your wallet.', 'fa-exclamation-triangle', 4000);
+                        return;
+                    }
+                    // Deduct balance
+                    currentUser.balance -= amount;
+                    saveCurrentUser();
+                    updateBalanceDisplay();
+
+                    // Save transaction
+                    const tx = {
+                        type: pendingTransaction.type,
+                        description: pendingTransaction.description,
+                        amount: -amount,
+                        date: pendingTransaction.date,
+                        network: pendingTransaction.network,
+                        phone: pendingTransaction.phone,
+                        value: pendingTransaction.value
+                    };
+                    saveTransaction(tx);
+
+                    // Save beneficiary (if new)
+                    saveBeneficiary(pendingTransaction.phone, pendingTransaction.network);
+
+                    // Add notification
+                    const notifMsg = `${pendingTransaction.description} successful for ${pendingTransaction.phone}`;
+                    addNotification(notifMsg, pendingTransaction.type);
+
+                    // Show success
+                    showIsland('Transaction successful!', 'fa-check-circle', 3000);
+                    // Close product sheet
+                    productSheetOverlay.classList.remove('active');
+                }, 1500);
+            }
+
+            function saveBeneficiary(phone, network) {
+                const benefs = JSON.parse(localStorage.getItem(KEYS.BENEFICIARIES) || '[]');
+                const exists = benefs.some(b => b.phone === normalizePhone(phone));
+                if (!exists) {
+                    benefs.push({ phone: normalizePhone(phone), network: network || 'unknown', savedAt: new Date().toISOString() });
+                    localStorage.setItem(KEYS.BENEFICIARIES, JSON.stringify(benefs));
+                }
+            }
+
+            // ─── LOADER ───
+            function showLoader(msg) {
+                loaderText.textContent = msg || 'Processing…';
+                loaderOverlay.classList.add('active');
+            }
+            function hideLoader() {
+                loaderOverlay.classList.remove('active');
+            }
+
+            // Start app
+            init();
+        })();
+    </script>
+    <script>
+  // Register Service Worker
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("/sw.js")
+        .then(reg => console.log("SW registered:", reg.scope))
+        .catch(err => console.log("SW registration failed:", err));
+    });
+  }
+
+  // Install prompt handling
+  let deferredPrompt = null;
+
+  window.addEventListener("beforeinstallprompt", (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    // Show popup as soon as the browser is ready
+    showInstallPopup();
+  });
+
+  function showInstallPopup() {
+    const popup = document.getElementById("install-popup");
+    if (popup) popup.classList.add("show");
+  }
+
+  function hideInstallPopup() {
+    const popup = document.getElementById("install-popup");
+    if (popup) popup.classList.remove("show");
+  }
+
+  // Call this from the Install button
+  async function installApp() {
+    if (!deferredPrompt) {
+      // Fallback for iOS / already installed
+      alert("To install: tap the Share button → Add to Home Screen");
+      hideInstallPopup();
+      return;
+    }
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    console.log("User choice:", outcome);
+    deferredPrompt = null;
+    hideInstallPopup();
+  }
+
+  // Show popup on first load even if beforeinstallprompt hasn't fired yet
+  // (gives users a chance to install immediately)
+  window.addEventListener("load", () => {
+    // Only show if not already installed and not dismissed recently
+    const dismissed = localStorage.getItem("subcheap-install-dismissed");
+    if (!dismissed && !window.matchMedia("(display-mode: standalone)").matches) {
+      setTimeout(showInstallPopup, 800); // slight delay so page feels loaded
+    }
+  });
+
+  function dismissInstall() {
+    localStorage.setItem("subcheap-install-dismissed", Date.now());
+    hideInstallPopup();
+  }
+</script>
+</body>
+</html>

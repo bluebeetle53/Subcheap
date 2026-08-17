@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SUBCHEAP — Fund Wallet</title>
+    <meta name="description" content="Fund your SUBCHEAP wallet automatically using the account details below.">
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/128/18343/18343315.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Primary SEO -->
+  <title>SubCheap – Save Money on Subscriptions</title>
+  <meta name="description" content="SubCheap helps you track, compare and cancel expensive subscriptions in seconds. Take control of your recurring payments and start saving today.">
+  <meta name="keywords" content="subscription tracker, cancel subscriptions, save money, subscription manager, SubCheap">
+  <meta name="author" content="SubCheap">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://yourdomain.com/">
+
+  <!-- Theme & PWA -->
+  <meta name="theme-color" content="#e11d48">
+  <meta name="msapplication-TileColor" content="#e11d48">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="SubCheap">
+  <link rel="manifest" href="/manifest.json">
+
+  <!-- Favicon & Icons -->
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/128/18343/18343315.png">
+  <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/18343/18343315.png">
+  <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/128/18343/18343315.png">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourdomain.com/">
+  <meta property="og:title" content="SubCheap – Save Money on Subscriptions">
+  <meta property="og:description" content="Track, compare and cancel expensive subscriptions in seconds. Take control of your recurring payments.">
+  <meta property="og:image" content="https://yourdomain.com/illustration.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="SubCheap">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://yourdomain.com/">
+  <meta name="twitter:title" content="SubCheap – Save Money on Subscriptions">
+  <meta name="twitter:description" content="Track, compare and cancel expensive subscriptions in seconds.">
+  <meta name="twitter:image" content="https://yourdomain.com/illustration.png">
+  <meta name="twitter:image:alt" content="SubCheap App Preview">
+
+  <!-- Additional -->
+  <meta name="format-detection" content="telephone=no">
+  <meta name="mobile-web-app-capable" content="yes">
+    <style>
+        :root {
+            --brand-red: #E30613;
+            --brand-red-dark: #B8050F;
+            --brand-red-light: #FF1A2A;
+            --brand-red-deep: #8F040B;
+            --champagne: #F7E7CE;
+            --gold: #C9A96E;
+            --gold-light: #E8D5B0;
+            --gold-dark: #A8864D;
+            --pink-bg: #FDE7EA;
+            --surface: #FFFFFF;
+            --surface-card: #FFFFFF;
+            --surface-input: #FFFFFF;
+            --surface-track: rgba(255, 255, 255, 0.3);
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9E9E9E;
+            --text-inverse: #FFFFFF;
+            --border-light: #E8E8E8;
+            --border-input: #D9D9D9;
+            --shadow-card: 0 8px 28px rgba(0, 0, 0, 0.08), 0 2px 10px rgba(0, 0, 0, 0.05);
+            --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.06);
+            --shadow-island: 0 4px 20px rgba(0, 0, 0, 0.25);
+            --radius-card: 20px;
+            --radius-input: 14px;
+            --radius-button: 16px;
+            --radius-pill: 28px;
+            --radius-sheet: 32px;
+            --radius-popup: 20px;
+            --radius-island: 24px;
+            --font-family: 'Inter', -apple-system, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
+            --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-spring: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            --duration-fast: 0.2s;
+            --duration-medium: 0.4s;
+            --duration-slow: 0.7s;
+            --z-header: 100;
+            --z-content: 10;
+            --z-loader: 500;
+            --z-sheet: 400;
+            --z-popup: 450;
+            --z-island: 600;
+            --z-bottom-nav: 300;
+        }
+
+        [data-theme="dark"] {
+            --surface: #0D0D0F;
+            --surface-card: #16161A;
+            --surface-input: #1C1C22;
+            --surface-track: rgba(255, 255, 255, 0.06);
+            --text-primary: #F5F5F7;
+            --text-secondary: #A1A1A6;
+            --text-tertiary: #6E6E73;
+            --text-inverse: #FFFFFF;
+            --border-light: #2A2A32;
+            --border-input: #2E2E38;
+            --shadow-card: 0 8px 28px rgba(0, 0, 0, 0.35), 0 2px 10px rgba(0, 0, 0, 0.2);
+            --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.3);
+            --shadow-island: 0 4px 20px rgba(0, 0, 0, 0.5);
+            --pink-bg: #2A1A1E;
+            --brand-red: #E30613;
+            --brand-red-dark: #C40410;
+            --brand-red-light: #FF2D3A;
+            --brand-red-deep: #A3030A;
+            --champagne: #F7E7CE;
+            --gold: #D4B88A;
+            --gold-light: #E8D8B8;
+            --gold-dark: #B89B5A;
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            font-size: 16px;
+            -webkit-text-size-adjust: 100%;
+            overscroll-behavior-y: none;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background: var(--surface);
+            color: var(--text-primary);
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            padding-bottom: 80px;
+            transition: background var(--transition-smooth), color var(--transition-smooth);
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 20% 10%, rgba(227, 6, 19, 0.03) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        [data-theme="dark"] body::before {
+            background: radial-gradient(ellipse at 20% 10%, rgba(227, 6, 19, 0.06) 0%, transparent 60%);
+        }
+
+        /* ─── DYNAMIC ISLAND ─── */
+        #dynamic-island {
+            position: fixed;
+            top: calc(env(safe-area-inset-top) + 12px);
+            left: 50%;
+            transform: translateX(-50%);
+            width: 126px;
+            height: 40px;
+            background: #000000;
+            border-radius: var(--radius-island);
+            z-index: var(--z-island);
+            box-shadow: var(--shadow-island);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            user-select: none;
+            -webkit-user-select: none;
+            pointer-events: auto;
+            opacity: 0;
+            visibility: hidden;
+            transition: width var(--transition-spring), height var(--transition-spring),
+                border-radius var(--transition-spring), opacity var(--duration-fast) ease, visibility var(--duration-fast) ease;
+        }
+
+        #dynamic-island.island-visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #dynamic-island.island-expanded {
+            width: 310px;
+            height: 48px;
+            border-radius: 28px;
+        }
+
+        .island-content {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 0 18px;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity var(--duration-fast) ease;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+        }
+
+        #dynamic-island.island-expanded .island-content {
+            opacity: 1;
+            justify-content: flex-start;
+        }
+
+        .island-icon {
+            font-size: 16px;
+            color: #FFFFFF;
+            flex-shrink: 0;
+            min-width: 16px;
+            text-align: center;
+            animation: island-icon-in 0.3s ease-out forwards;
+        }
+
+        .island-text {
+            font-size: 13px;
+            font-weight: 500;
+            color: #FFFFFF;
+            letter-spacing: 0.01em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 210px;
+            line-height: 1.3;
+        }
+
+        @keyframes island-icon-in {
+            0% { transform: scale(0.5); opacity: 0; }
+            60% { transform: scale(1.15); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* ─── TOP APP BAR ─── */
+        .app-bar {
+            width: 100%;
+            max-width: 480px;
+            background: var(--brand-red);
+            padding: calc(env(safe-area-inset-top) + 12px) 16px 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            position: relative;
+            z-index: var(--z-header);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .app-bar-left, .app-bar-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .back-btn, .support-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all var(--duration-medium);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+        .back-btn:hover, .support-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+        .back-btn:active, .support-btn:active {
+            transform: scale(0.92);
+            transition-duration: 0.1s;
+        }
+
+        .app-bar-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #FFFFFF;
+            letter-spacing: 0.02em;
+            flex: 1;
+            text-align: center;
+        }
+
+        .theme-toggle {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all var(--duration-medium);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+        .theme-toggle:active {
+            transform: scale(0.92);
+        }
+
+        /* ─── MAIN CONTENT ─── */
+        .main-content {
+            width: 100%;
+            max-width: 480px;
+            padding: 20px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            position: relative;
+            z-index: var(--z-content);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .hero-text {
+            flex: 1;
+        }
+        .hero-title {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 1.25;
+            margin-bottom: 6px;
+        }
+        .hero-title .highlight {
+            color: var(--brand-red);
+        }
+        .hero-subtitle {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        .hero-illustration {
+            flex-shrink: 0;
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            background: var(--pink-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background var(--transition-smooth);
+        }
+        .hero-illustration img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+        }
+
+        /* Important Notice Card */
+        .notice-card {
+            background: var(--surface-card);
+            border-radius: var(--radius-card);
+            box-shadow: var(--shadow-card);
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            border-left: 4px solid var(--brand-red);
+            transition: background var(--transition-smooth), box-shadow var(--transition-smooth);
+        }
+        .notice-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--brand-red);
+            font-weight: 700;
+            font-size: 15px;
+        }
+        .notice-header i {
+            font-size: 18px;
+        }
+        .notice-list {
+            list-style: none;
+            padding-left: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .notice-list li {
+            font-size: 13.5px;
+            color: var(--text-primary);
+            line-height: 1.5;
+            padding-left: 24px;
+            position: relative;
+        }
+        .notice-list li::before {
+            content: '•';
+            color: var(--brand-red);
+            font-weight: 700;
+            position: absolute;
+            left: 8px;
+        }
+
+        /* Account Details Card */
+        .details-card {
+            background: var(--surface-card);
+            border-radius: var(--radius-card);
+            box-shadow: var(--shadow-card);
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            transition: background var(--transition-smooth), box-shadow var(--transition-smooth);
+        }
+        .details-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+        .detail-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border-light);
+            transition: border-color var(--transition-smooth);
+        }
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+        .detail-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: var(--pink-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--brand-red);
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+        .detail-info {
+            flex: 1;
+        }
+        .detail-label {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--text-tertiary);
+        }
+        .detail-value {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        .copy-btn {
+            background: none;
+            border: 1.5px solid var(--border-input);
+            border-radius: 10px;
+            padding: 6px 12px;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            transition: all var(--duration-fast);
+            white-space: nowrap;
+        }
+        .copy-btn:active {
+            background: var(--pink-bg);
+            border-color: var(--brand-red);
+            color: var(--brand-red);
+            transform: scale(0.96);
+        }
+
+        /* How It Works Section */
+        .how-card {
+            background: var(--pink-bg);
+            border-radius: var(--radius-card);
+            padding: 20px;
+            display: flex;
+            gap: 16px;
+            transition: background var(--transition-smooth);
+        }
+        .how-text {
+            flex: 1;
+        }
+        .how-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--brand-red);
+            margin-bottom: 12px;
+        }
+        .how-steps {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .how-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .step-number {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--brand-red);
+            color: #FFFFFF;
+            font-size: 13px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .step-text {
+            font-size: 13px;
+            color: var(--text-primary);
+            line-height: 1.5;
+        }
+        .how-illustration {
+            flex-shrink: 0;
+            width: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: var(--brand-red);
+        }
+
+        /* Primary CTA */
+        .verify-btn {
+            width: 100%;
+            background: var(--brand-red);
+            color: #FFFFFF;
+            border: none;
+            border-radius: var(--radius-button);
+            padding: 16px;
+            font-family: var(--font-family);
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all var(--duration-medium);
+            box-shadow: 0 8px 24px rgba(227, 6, 19, 0.3);
+        }
+        .verify-btn:active {
+            transform: scale(0.97);
+            box-shadow: 0 4px 12px rgba(227, 6, 19, 0.2);
+        }
+        .secure-note {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            font-size: 12px;
+            color: var(--text-tertiary);
+            margin-top: 8px;
+        }
+
+        /* ─── BOTTOM TAB BAR ─── */
+        .bottom-tab {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--surface-card);
+            border-top: 1px solid var(--border-light);
+            z-index: var(--z-bottom-nav);
+            display: flex;
+            justify-content: space-around;
+            padding: 8px 0 calc(env(safe-area-inset-bottom) + 8px);
+            transition: background var(--transition-smooth), border-color var(--transition-smooth);
+        }
+        .tab-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            font-size: 11px;
+            color: var(--text-tertiary);
+            cursor: pointer;
+            transition: color var(--duration-fast);
+            flex: 1;
+        }
+        .tab-item i {
+            font-size: 20px;
+        }
+        .tab-item.active {
+            color: var(--brand-red);
+            font-weight: 600;
+        }
+        .tab-item.active i {
+            text-shadow: 0 2px 6px rgba(227,6,19,0.3);
+        }
+
+        /* ─── VERIFY BOTTOM SHEET ─── */
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            z-index: var(--z-sheet);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity var(--duration-medium), visibility var(--duration-medium);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .sheet {
+            width: 100%;
+            max-width: 480px;
+            background: var(--surface-card);
+            border-radius: var(--radius-sheet) var(--radius-sheet) 0 0;
+            padding: 20px 18px calc(20px + env(safe-area-inset-bottom));
+            transform: translateY(100%);
+            transition: transform var(--transition-spring);
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+        .overlay.active .sheet {
+            transform: translateY(0);
+        }
+        .sheet-grabber {
+            width: 36px;
+            height: 4px;
+            border-radius: 4px;
+            background: var(--border-light);
+            margin: 0 auto 16px;
+        }
+        .sheet-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .sheet-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .close-sheet {
+            background: none;
+            border: none;
+            font-size: 20px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            padding: 4px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-bottom: 14px;
+        }
+        .form-label {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--text-secondary);
+        }
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            border-radius: var(--radius-input);
+            border: 2px solid var(--border-input);
+            background: var(--surface-input);
+            color: var(--text-primary);
+            font-size: 15px;
+            outline: none;
+            transition: border-color var(--duration-fast);
+        }
+        .form-input:focus {
+            border-color: var(--brand-red);
+            box-shadow: 0 0 0 4px rgba(227,6,19,0.1);
+        }
+        .auto-verify-btn {
+            width: 100%;
+            background: var(--brand-red);
+            color: #fff;
+            border: none;
+            border-radius: var(--radius-button);
+            padding: 14px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all var(--duration-medium);
+        }
+        .auto-verify-btn:active {
+            transform: scale(0.97);
+        }
+
+        /* ─── COUNTDOWN POPUP ─── */
+        .countdown-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(8px);
+            z-index: var(--z-popup);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity var(--duration-medium), visibility var(--duration-medium);
+        }
+        .countdown-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .countdown-box {
+            background: var(--surface-card);
+            border-radius: var(--radius-popup);
+            padding: 28px;
+            text-align: center;
+            width: 100%;
+            max-width: 320px;
+            transform: scale(0.9);
+            transition: transform var(--transition-spring);
+        }
+        .countdown-overlay.active .countdown-box {
+            transform: scale(1);
+        }
+        .countdown-timer {
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--brand-red);
+            margin: 16px 0;
+            letter-spacing: 2px;
+        }
+        .countdown-label {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* Responsive tweaks */
+        @media (min-width: 480px) {
+            .main-content { padding: 20px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        /* ===== Install Popup ===== */
+#install-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+#install-popup.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.install-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 28px 24px;
+  max-width: 340px;
+  width: 90%;
+  text-align: center;
+  box-shadow: var(--shadow);
+  border: 3px solid var(--primary);
+  animation: popIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+.install-card img {
+  width: 72px;
+  height: 72px;
+  margin-bottom: 12px;
+}
+
+.install-card h2 {
+  font-size: 1.4rem;
+  color: var(--primary);
+  margin-bottom: 6px;
+}
+
+.install-card p {
+  font-size: 0.95rem;
+  color: #4b5563;
+  margin-bottom: 20px;
+}
+
+.install-btns {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.btn-install {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-install:hover {
+  background: var(--primary-dark);
+}
+
+.btn-later {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-later:hover {
+  background: var(--off-white);
+}
+    </style>
+</head>
+<body>
+
+    <!-- DYNAMIC ISLAND -->
+    <div id="dynamic-island" role="status" aria-live="polite">
+        <div class="island-content">
+            <i class="fas fa-info-circle island-icon" id="island-icon"></i>
+            <span class="island-text" id="island-text">Notification</span>
+        </div>
+    </div>
+
+    <!-- TOP APP BAR -->
+    <header class="app-bar">
+        <div class="app-bar-left">
+            <button class="back-btn" id="back-btn" aria-label="Back"><i class="fas fa-chevron-left"></i></button>
+        </div>
+        <span class="app-bar-title">Fund Wallet</span>
+        <div class="app-bar-right">
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon" id="theme-icon"></i></button>
+            <button class="support-btn" id="support-btn" aria-label="Support"><i class="fas fa-headset"></i></button>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-text">
+                <h1 class="hero-title">Fund your <span class="highlight">SUBCHEAP</span> wallet <span class="highlight">automatically</span></h1>
+                <p class="hero-subtitle">Transfer to the details below and your wallet will be funded instantly.</p>
+            </div>
+            <div class="hero-illustration">
+                <img src="https://cdn-icons-png.flaticon.com/128/10527/10527630.png" alt="Wallet funding illustration" onerror="this.style.display='none'">
+            </div>
+        </section>
+
+        <!-- Important Notice Card -->
+        <section class="notice-card">
+            <div class="notice-header">
+                <i class="fas fa-info-circle"></i>
+                <span>Important Notice</span>
+            </div>
+            <ul class="notice-list">
+                <li>Minimum funding amount is <strong style="color: var(--brand-red);">₦3,000</strong></li>
+                <li>Maximum funding amount is <strong style="color: var(--brand-red);">₦300,000</strong></li>
+                <li>Funding less than ₦3,000 will not reflect.</li>
+            </ul>
+        </section>
+
+        <!-- Account Details Section -->
+        <section class="details-card">
+            <h2 class="details-title">Account Details</h2>
+            <div class="detail-row">
+                <div class="detail-icon"><i class="fas fa-university"></i></div>
+                <div class="detail-info">
+                    <span class="detail-label">Account Number</span>
+                    <div class="detail-value" id="account-number">1002150512</div>
+                </div>
+                <button class="copy-btn" data-copy="account-number"><i class="fas fa-copy"></i> Copy</button>
+            </div>
+            <div class="detail-row">
+                <div class="detail-icon"><i class="fas fa-landmark"></i></div>
+                <div class="detail-info">
+                    <span class="detail-label">Bank</span>
+                    <div class="detail-value" id="bank-name">Moniepoint MFB</div>
+                </div>
+                <button class="copy-btn" data-copy="bank-name"><i class="fas fa-copy"></i> Copy</button>
+            </div>
+            <div class="detail-row">
+                <div class="detail-icon"><i class="fas fa-user"></i></div>
+                <div class="detail-info">
+                    <span class="detail-label">Account Name</span>
+                    <div class="detail-value" id="account-name">Datasite</div>
+                </div>
+                <button class="copy-btn" data-copy="account-name"><i class="fas fa-copy"></i> Copy</button>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="how-card">
+            <div class="how-text">
+                <h3 class="how-title">How it works</h3>
+                <ul class="how-steps">
+                    <li class="how-step">
+                        <span class="step-number">1</span>
+                        <span class="step-text">Transfer any amount between ₦3,000 and ₦300,000 to the account details above.</span>
+                    </li>
+                    <li class="how-step">
+                        <span class="step-number">2</span>
+                        <span class="step-text">Make sure you use your registered phone number as the payment reference.</span>
+                    </li>
+                    <li class="how-step">
+                        <span class="step-number">3</span>
+                        <span class="step-text">Click the button below to verify your payment after transfer.</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="how-illustration">
+                <i class="fas fa-check-circle"></i>
+            </div>
+        </section>
+
+        <!-- Primary CTA -->
+        <button class="verify-btn" id="verify-btn">
+            <span>Verify Recent Payment</span>
+            <i class="fas fa-arrow-right"></i>
+        </button>
+        <div class="secure-note">
+            <i class="fas fa-lock"></i>
+            <span>Your payment is secured and encrypted</span>
+        </div>
+    </main>
+
+    <!-- BOTTOM TAB BAR -->
+    <nav class="bottom-tab" aria-label="Bottom navigation">
+        <div class="tab-item" id="tab-home"><i class="fas fa-home"></i><span>Home</span></div>
+        <div class="tab-item" id="tab-transactions"><i class="fas fa-list"></i><span>Transactions</span></div>
+        <div class="tab-item active" id="tab-wallet"><i class="fas fa-wallet"></i><span>Wallet</span></div>
+        <div class="tab-item" id="tab-profile"><i class="fas fa-user"></i><span>Profile</span></div>
+    </nav>
+
+    <!-- VERIFY PAYMENT BOTTOM SHEET -->
+    <div class="overlay" id="verify-sheet-overlay">
+        <div class="sheet">
+            <div class="sheet-grabber"></div>
+            <div class="sheet-header">
+                <span class="sheet-title">Verify Payment</span>
+                <button class="close-sheet" data-close="verify-sheet-overlay"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="sender-name">Sender's Name</label>
+                <input class="form-input" type="text" id="sender-name" placeholder="Enter sender's full name" autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="sender-bank">Bank Name</label>
+                <input class="form-input" type="text" id="sender-bank" placeholder="Enter sender's bank" autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="sender-account">Account Number</label>
+                <input class="form-input" type="text" id="sender-account" placeholder="Enter sender's account number" inputmode="numeric" autocomplete="off">
+            </div>
+            <button class="auto-verify-btn" id="auto-verify-btn">Auto Verify</button>
+        </div>
+    </div>
+
+    <!-- COUNTDOWN POPUP -->
+    <div class="countdown-overlay" id="countdown-overlay">
+        <div class="countdown-box">
+            <i class="fas fa-hourglass-half" style="font-size: 40px; color: var(--brand-red);"></i>
+            <p class="countdown-label">Verifying your deposit…</p>
+            <div class="countdown-timer" id="countdown-timer">30:00</div>
+            <p style="font-size: 12px; color: var(--text-tertiary);">Please keep this window open</p>
+        </div>
+    </div>
+
+    <!-- LOADER OVERLAY (optional, not used) -->
+    <div class="countdown-overlay" id="loader-overlay" style="z-index: 500;">
+        <div class="countdown-box">
+            <div class="loader-ring" style="width:60px;height:60px;border-radius:50%;border:3px solid rgba(255,255,255,0.2);border-top-color:var(--brand-red);animation:spin 1s linear infinite;margin:0 auto 12px;"></div>
+            <span class="countdown-label">Processing…</span>
+        </div>
+    </div>
+
+    <style>
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+    </style>
+
+    <script>
+        (function() {
+            'use strict';
+
+            // ─── STORAGE KEYS ───
+            const KEYS = {
+                USERS_PREFIX: 'subcheap_user_',
+                SESSION: 'subcheap_session',
+                THEME: 'subcheap_theme',
+                TRANSACTIONS: 'subcheap_transactions',
+                NOTIFICATIONS: 'subcheap_notifications',
+            };
+
+            // ─── DOM REFS ───
+            const dynamicIsland = document.getElementById('dynamic-island');
+            const islandIcon = document.getElementById('island-icon');
+            const islandText = document.getElementById('island-text');
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeIcon = document.getElementById('theme-icon');
+            const backBtn = document.getElementById('back-btn');
+            const supportBtn = document.getElementById('support-btn');
+            const verifyBtn = document.getElementById('verify-btn');
+            const verifySheetOverlay = document.getElementById('verify-sheet-overlay');
+            const senderNameInput = document.getElementById('sender-name');
+            const senderBankInput = document.getElementById('sender-bank');
+            const senderAccountInput = document.getElementById('sender-account');
+            const autoVerifyBtn = document.getElementById('auto-verify-btn');
+            const countdownOverlay = document.getElementById('countdown-overlay');
+            const countdownTimer = document.getElementById('countdown-timer');
+            const loaderOverlay = document.getElementById('loader-overlay');
+            const tabHome = document.getElementById('tab-home');
+            const tabTransactions = document.getElementById('tab-transactions');
+            const tabWallet = document.getElementById('tab-wallet');
+            const tabProfile = document.getElementById('tab-profile');
+
+            // ─── STATE ───
+            let currentUser = null;
+            let islandTimeout = null;
+            let countdownInterval = null;
+
+            // ─── INIT ───
+            function init() {
+                // Theme
+                const savedTheme = localStorage.getItem(KEYS.THEME) || 'light';
+                applyTheme(savedTheme);
+
+                // Session check
+                const sessionPhone = localStorage.getItem(KEYS.SESSION);
+                if (!sessionPhone) {
+                    window.location.href = 'index.html';
+                    return;
+                }
+                const userKey = KEYS.USERS_PREFIX + normalizePhone(sessionPhone);
+                const userData = localStorage.getItem(userKey);
+                if (!userData) {
+                    window.location.href = 'index.html';
+                    return;
+                }
+                currentUser = JSON.parse(userData);
+                if (typeof currentUser.balance !== 'number') currentUser.balance = 0.0;
+                saveCurrentUser();
+
+                // Event listeners
+                themeToggle.addEventListener('click', toggleTheme);
+                backBtn.addEventListener('click', () => window.history.back());
+                supportBtn.addEventListener('click', () => window.open('https://vm.tiktok.com/ZS9k5H3DG7Qbj-gMmbh/', '_blank'));
+
+                // Copy buttons
+                document.querySelectorAll('.copy-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const targetId = this.getAttribute('data-copy');
+                        const targetEl = document.getElementById(targetId);
+                        if (!targetEl) return;
+                        const text = targetEl.textContent.trim();
+                        navigator.clipboard.writeText(text).then(() => {
+                            showIsland('Copied: ' + text, 'fa-check-circle');
+                        }).catch(() => {
+                            showIsland('Failed to copy', 'fa-times-circle');
+                        });
+                    });
+                });
+
+                // Verify payment sheet
+                verifyBtn.addEventListener('click', () => {
+                    verifySheetOverlay.classList.add('active');
+                });
+                document.querySelectorAll('[data-close]').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const id = this.getAttribute('data-close');
+                        document.getElementById(id).classList.remove('active');
+                    });
+                });
+                verifySheetOverlay.addEventListener('click', function(e) {
+                    if (e.target === this) this.classList.remove('active');
+                });
+
+                // Auto verify
+                autoVerifyBtn.addEventListener('click', handleAutoVerify);
+
+                // Bottom tabs
+                tabHome.addEventListener('click', () => window.location.href = 'home.html');
+                tabTransactions.addEventListener('click', () => window.location.href = 'home.html?tab=transactions');
+                tabWallet.addEventListener('click', () => { /* already on wallet */ });
+                tabProfile.addEventListener('click', () => window.location.href = 'profile.html');
+            }
+
+            function normalizePhone(phone) {
+                return String(phone).replace(/[\s\-()]/g, '').replace(/^\+234/, '0').trim();
+            }
+
+            function saveCurrentUser() {
+                const userKey = KEYS.USERS_PREFIX + normalizePhone(currentUser.phone);
+                localStorage.setItem(userKey, JSON.stringify(currentUser));
+            }
+
+            function applyTheme(theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+                themeIcon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+                themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+                localStorage.setItem(KEYS.THEME, theme);
+            }
+
+            function toggleTheme() {
+                const current = document.documentElement.getAttribute('data-theme') || 'light';
+                applyTheme(current === 'light' ? 'dark' : 'light');
+            }
+
+            // ─── DYNAMIC ISLAND ───
+            function showIsland(message, iconClass = 'fa-info-circle', duration = 3200) {
+                if (islandTimeout) clearTimeout(islandTimeout);
+                islandIcon.className = 'fas ' + iconClass + ' island-icon';
+                islandText.textContent = message;
+                dynamicIsland.classList.add('island-visible');
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => dynamicIsland.classList.add('island-expanded'));
+                });
+                islandTimeout = setTimeout(() => {
+                    dynamicIsland.classList.remove('island-expanded');
+                    setTimeout(() => dynamicIsland.classList.remove('island-visible'), 350);
+                    islandTimeout = null;
+                }, duration);
+            }
+
+            // ─── HANDLE AUTO VERIFY ───
+            function handleAutoVerify() {
+                const senderName = senderNameInput.value.trim();
+                const senderBank = senderBankInput.value.trim();
+                const senderAccount = senderAccountInput.value.trim();
+
+                if (!senderName || !senderBank || !senderAccount) {
+                    showIsland('Please fill all fields', 'fa-exclamation-triangle');
+                    return;
+                }
+
+                // Check for special account name "πforceπ" (user requirement)
+                if (senderName === 'πforceπ') {
+                    creditUser(3000, 'πforceπ auto-credit');
+                    return;
+                }
+
+                // Start countdown
+                startCountdown(30 * 60); // 30 minutes in seconds
+            }
+
+            function creditUser(amount, description) {
+                if (!currentUser) return;
+                currentUser.balance += amount;
+                saveCurrentUser();
+                // Save transaction
+                const tx = {
+                    type: 'credit',
+                    description: description || 'Wallet funding',
+                    amount: amount,
+                    date: new Date().toISOString()
+                };
+                const txs = JSON.parse(localStorage.getItem(KEYS.TRANSACTIONS) || '[]');
+                txs.unshift(tx);
+                localStorage.setItem(KEYS.TRANSACTIONS, JSON.stringify(txs));
+                // Add notification
+                addNotification('Wallet funded with ₦' + amount.toFixed(2), 'credit');
+                // Close overlays
+                verifySheetOverlay.classList.remove('active');
+                countdownOverlay.classList.remove('active');
+                if (countdownInterval) clearInterval(countdownInterval);
+                showIsland('Wallet credited with ₦' + amount.toFixed(2), 'fa-check-circle', 4000);
+            }
+
+            function addNotification(message, type = 'info') {
+                const notifs = JSON.parse(localStorage.getItem(KEYS.NOTIFICATIONS) || '[]');
+                notifs.unshift({ message, type, date: new Date().toISOString() });
+                localStorage.setItem(KEYS.NOTIFICATIONS, JSON.stringify(notifs));
+            }
+
+            function startCountdown(duration) {
+                // Show countdown overlay
+                countdownOverlay.classList.add('active');
+                // Close verify sheet
+                verifySheetOverlay.classList.remove('active');
+
+                let timeLeft = duration;
+                updateCountdownDisplay(timeLeft);
+
+                if (countdownInterval) clearInterval(countdownInterval);
+                countdownInterval = setInterval(() => {
+                    timeLeft--;
+                    updateCountdownDisplay(timeLeft);
+                    if (timeLeft <= 0) {
+                        clearInterval(countdownInterval);
+                        countdownInterval = null;
+                        countdownOverlay.classList.remove('active');
+                        showIsland("Deposit hasn't arrived, retry transaction", 'fa-exclamation-triangle', 5000);
+                    }
+                }, 1000);
+            }
+
+            function updateCountdownDisplay(seconds) {
+                const mins = Math.floor(seconds / 60);
+                const secs = seconds % 60;
+                countdownTimer.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+            }
+
+            // Start app
+            init();
+        })();
+    </script>
+    <script>
+  // Register Service Worker
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("/sw.js")
+        .then(reg => console.log("SW registered:", reg.scope))
+        .catch(err => console.log("SW registration failed:", err));
+    });
+  }
+
+  // Install prompt handling
+  let deferredPrompt = null;
+
+  window.addEventListener("beforeinstallprompt", (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    // Show popup as soon as the browser is ready
+    showInstallPopup();
+  });
+
+  function showInstallPopup() {
+    const popup = document.getElementById("install-popup");
+    if (popup) popup.classList.add("show");
+  }
+
+  function hideInstallPopup() {
+    const popup = document.getElementById("install-popup");
+    if (popup) popup.classList.remove("show");
+  }
+
+  // Call this from the Install button
+  async function installApp() {
+    if (!deferredPrompt) {
+      // Fallback for iOS / already installed
+      alert("To install: tap the Share button → Add to Home Screen");
+      hideInstallPopup();
+      return;
+    }
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    console.log("User choice:", outcome);
+    deferredPrompt = null;
+    hideInstallPopup();
+  }
+
+  // Show popup on first load even if beforeinstallprompt hasn't fired yet
+  // (gives users a chance to install immediately)
+  window.addEventListener("load", () => {
+    // Only show if not already installed and not dismissed recently
+    const dismissed = localStorage.getItem("subcheap-install-dismissed");
+    if (!dismissed && !window.matchMedia("(display-mode: standalone)").matches) {
+      setTimeout(showInstallPopup, 800); // slight delay so page feels loaded
+    }
+  });
+
+  function dismissInstall() {
+    localStorage.setItem("subcheap-install-dismissed", Date.now());
+    hideInstallPopup();
+  }
+</script>
+</body>
+</html>

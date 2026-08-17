@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SUBCHEAP — Profile</title>
+    <meta name="description" content="Manage your SUBCHEAP profile settings.">
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/128/18343/18343315.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Primary SEO -->
+  <title>SubCheap – Save Money on Subscriptions</title>
+  <meta name="description" content="SubCheap helps you track, compare and cancel expensive subscriptions in seconds. Take control of your recurring payments and start saving today.">
+  <meta name="keywords" content="subscription tracker, cancel subscriptions, save money, subscription manager, SubCheap">
+  <meta name="author" content="SubCheap">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://yourdomain.com/">
+
+  <!-- Theme & PWA -->
+  <meta name="theme-color" content="#e11d48">
+  <meta name="msapplication-TileColor" content="#e11d48">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="SubCheap">
+  <link rel="manifest" href="/manifest.json">
+
+  <!-- Favicon & Icons -->
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/128/18343/18343315.png">
+  <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/18343/18343315.png">
+  <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/128/18343/18343315.png">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourdomain.com/">
+  <meta property="og:title" content="SubCheap – Save Money on Subscriptions">
+  <meta property="og:description" content="Track, compare and cancel expensive subscriptions in seconds. Take control of your recurring payments.">
+  <meta property="og:image" content="https://yourdomain.com/illustration.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="SubCheap">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://yourdomain.com/">
+  <meta name="twitter:title" content="SubCheap – Save Money on Subscriptions">
+  <meta name="twitter:description" content="Track, compare and cancel expensive subscriptions in seconds.">
+  <meta name="twitter:image" content="https://yourdomain.com/illustration.png">
+  <meta name="twitter:image:alt" content="SubCheap App Preview">
+
+  <!-- Additional -->
+  <meta name="format-detection" content="telephone=no">
+  <meta name="mobile-web-app-capable" content="yes">
+    <style>
+        :root {
+            --brand-red: #E30613;
+            --brand-red-dark: #B8050F;
+            --brand-red-light: #FF1A2A;
+            --brand-red-deep: #8F040B;
+            --champagne: #F7E7CE;
+            --gold: #C9A96E;
+            --gold-light: #E8D5B0;
+            --gold-dark: #A8864D;
+            --pink-bg: #FDE7EA;
+            --surface: #FFFFFF;
+            --surface-card: #FFFFFF;
+            --surface-input: #FFFFFF;
+            --surface-track: rgba(255, 255, 255, 0.3);
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9E9E9E;
+            --text-inverse: #FFFFFF;
+            --border-light: #E8E8E8;
+            --border-input: #D9D9D9;
+            --shadow-card: 0 8px 28px rgba(0, 0, 0, 0.08), 0 2px 10px rgba(0, 0, 0, 0.05);
+            --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.06);
+            --shadow-island: 0 4px 20px rgba(0, 0, 0, 0.25);
+            --radius-card: 20px;
+            --radius-input: 14px;
+            --radius-button: 16px;
+            --radius-pill: 28px;
+            --radius-sheet: 32px;
+            --radius-popup: 20px;
+            --radius-island: 24px;
+            --font-family: 'Inter', -apple-system, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
+            --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-spring: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            --duration-fast: 0.2s;
+            --duration-medium: 0.4s;
+            --duration-slow: 0.7s;
+            --z-header: 100;
+            --z-content: 10;
+            --z-loader: 500;
+            --z-sheet: 400;
+            --z-popup: 450;
+            --z-island: 600;
+            --z-bottom-nav: 300;
+        }
+
+        [data-theme="dark"] {
+            --surface: #0D0D0F;
+            --surface-card: #16161A;
+            --surface-input: #1C1C22;
+            --surface-track: rgba(255, 255, 255, 0.06);
+            --text-primary: #F5F5F7;
+            --text-secondary: #A1A1A6;
+            --text-tertiary: #6E6E73;
+            --text-inverse: #FFFFFF;
+            --border-light: #2A2A32;
+            --border-input: #2E2E38;
+            --shadow-card: 0 8px 28px rgba(0, 0, 0, 0.35), 0 2px 10px rgba(0, 0, 0, 0.2);
+            --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.3);
+            --shadow-island: 0 4px 20px rgba(0, 0, 0, 0.5);
+            --pink-bg: #2A1A1E;
+            --brand-red: #E30613;
+            --brand-red-dark: #C40410;
+            --brand-red-light: #FF2D3A;
+            --brand-red-deep: #A3030A;
+            --champagne: #F7E7CE;
+            --gold: #D4B88A;
+            --gold-light: #E8D8B8;
+            --gold-dark: #B89B5A;
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            font-size: 16px;
+            -webkit-text-size-adjust: 100%;
+            overscroll-behavior-y: none;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background: var(--surface);
+            color: var(--text-primary);
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            padding-bottom: 80px;
+            transition: background var(--transition-smooth), color var(--transition-smooth);
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 20% 10%, rgba(227, 6, 19, 0.03) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        [data-theme="dark"] body::before {
+            background: radial-gradient(ellipse at 20% 10%, rgba(227, 6, 19, 0.06) 0%, transparent 60%);
+        }
+
+        /* ─── DYNAMIC ISLAND ─── */
+        #dynamic-island {
+            position: fixed;
+            top: calc(env(safe-area-inset-top) + 12px);
+            left: 50%;
+            transform: translateX(-50%);
+            width: 126px;
+            height: 40px;
+            background: #000000;
+            border-radius: var(--radius-island);
+            z-index: var(--z-island);
+            box-shadow: var(--shadow-island);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            user-select: none;
+            -webkit-user-select: none;
+            pointer-events: auto;
+            opacity: 0;
+            visibility: hidden;
+            transition: width var(--transition-spring), height var(--transition-spring),
+                border-radius var(--transition-spring), opacity var(--duration-fast) ease, visibility var(--duration-fast) ease;
+        }
+
+        #dynamic-island.island-visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #dynamic-island.island-expanded {
+            width: 310px;
+            height: 48px;
+            border-radius: 28px;
+        }
+
+        .island-content {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 0 18px;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity var(--duration-fast) ease;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+        }
+
+        #dynamic-island.island-expanded .island-content {
+            opacity: 1;
+            justify-content: flex-start;
+        }
+
+        .island-icon {
+            font-size: 16px;
+            color: #FFFFFF;
+            flex-shrink: 0;
+            min-width: 16px;
+            text-align: center;
+            animation: island-icon-in 0.3s ease-out forwards;
+        }
+
+        .island-text {
+            font-size: 13px;
+            font-weight: 500;
+            color: #FFFFFF;
+            letter-spacing: 0.01em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 210px;
+            line-height: 1.3;
+        }
+
+        @keyframes island-icon-in {
+            0% { transform: scale(0.5); opacity: 0; }
+            60% { transform: scale(1.15); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* ─── TOP APP BAR ─── */
+        .app-bar {
+            width: 100%;
+            max-width: 480px;
+            background: var(--brand-red);
+            padding: calc(env(safe-area-inset-top) + 12px) 16px 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            position: relative;
+            z-index: var(--z-header);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .app-bar-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all var(--duration-medium);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+        .back-btn:active {
+            transform: scale(0.92);
+        }
+
+        .app-bar-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #FFFFFF;
+            letter-spacing: 0.02em;
+            flex: 1;
+            text-align: center;
+        }
+
+        .theme-toggle {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all var(--duration-medium);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+        .theme-toggle:active {
+            transform: scale(0.92);
+        }
+
+        /* ─── MAIN CONTENT ─── */
+        .main-content {
+            width: 100%;
+            max-width: 480px;
+            padding: 20px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            position: relative;
+            z-index: var(--z-content);
+        }
+
+        /* Profile Header Card */
+        .profile-card {
+            background: var(--surface-card);
+            border-radius: var(--radius-card);
+            box-shadow: var(--shadow-card);
+            padding: 24px 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            transition: background var(--transition-smooth), box-shadow var(--transition-smooth);
+        }
+        .profile-avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: var(--pink-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--brand-red);
+            font-size: 28px;
+            flex-shrink: 0;
+        }
+        .profile-info {
+            flex: 1;
+        }
+        .profile-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 2px;
+            word-break: break-word;
+        }
+        .profile-phone {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 2px;
+        }
+        .profile-email {
+            font-size: 12px;
+            color: var(--text-tertiary);
+            word-break: break-word;
+        }
+        .edit-profile-btn {
+            background: none;
+            border: none;
+            color: var(--brand-red);
+            font-size: 14px;
+            cursor: pointer;
+            padding: 6px;
+            flex-shrink: 0;
+        }
+
+        /* Settings Section */
+        .settings-card {
+            background: var(--surface-card);
+            border-radius: var(--radius-card);
+            box-shadow: var(--shadow-card);
+            padding: 12px 16px;
+            transition: background var(--transition-smooth), box-shadow var(--transition-smooth);
+        }
+        .settings-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            padding: 8px 0;
+        }
+        .settings-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--border-light);
+            cursor: pointer;
+            transition: border-color var(--transition-smooth);
+        }
+        .settings-item:last-child {
+            border-bottom: none;
+        }
+        .settings-item:active {
+            opacity: 0.7;
+        }
+        .settings-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: var(--pink-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--brand-red);
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+        .settings-detail {
+            flex: 1;
+        }
+        .settings-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        .settings-value {
+            font-size: 12px;
+            color: var(--text-tertiary);
+            margin-top: 2px;
+            word-break: break-word;
+        }
+        .settings-chevron {
+            color: var(--text-tertiary);
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        /* Logout Button */
+        .logout-btn {
+            width: 100%;
+            background: var(--surface-card);
+            border: 1.5px solid var(--brand-red);
+            border-radius: var(--radius-button);
+            padding: 16px;
+            color: var(--brand-red);
+            font-family: var(--font-family);
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all var(--duration-medium);
+            box-shadow: var(--shadow-soft);
+        }
+        .logout-btn:active {
+            background: var(--pink-bg);
+            transform: scale(0.97);
+        }
+
+        /* ─── BOTTOM TAB BAR ─── */
+        .bottom-tab {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--surface-card);
+            border-top: 1px solid var(--border-light);
+            z-index: var(--z-bottom-nav);
+            display: flex;
+            justify-content: space-around;
+            padding: 8px 0 calc(env(safe-area-inset-bottom) + 8px);
+            transition: background var(--transition-smooth), border-color var(--transition-smooth);
+        }
+        .tab-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            font-size: 11px;
+            color: var(--text-tertiary);
+            cursor: pointer;
+            transition: color var(--duration-fast);
+            flex: 1;
+        }
+        .tab-item i {
+            font-size: 20px;
+        }
+        .tab-item.active {
+            color: var(--brand-red);
+            font-weight: 600;
+        }
+        .tab-item.active i {
+            text-shadow: 0 2px 6px rgba(227,6,19,0.3);
+        }
+
+        /* ─── EDIT BOTTOM SHEET ─── */
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            z-index: var(--z-sheet);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity var(--duration-medium), visibility var(--duration-medium);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .sheet {
+            width: 100%;
+            max-width: 480px;
+            background: var(--surface-card);
+            border-radius: var(--radius-sheet) var(--radius-sheet) 0 0;
+            padding: 20px 18px calc(20px + env(safe-area-inset-bottom));
+            transform: translateY(100%);
+            transition: transform var(--transition-spring);
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+        .overlay.active .sheet {
+            transform: translateY(0);
+        }
+        .sheet-grabber {
+            width: 36px;
+            height: 4px;
+            border-radius: 4px;
+            background: var(--border-light);
+            margin: 0 auto 16px;
+        }
+        .sheet-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .sheet-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .close-sheet {
+            background: none;
+            border: none;
+            font-size: 20px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            padding: 4px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-bottom: 14px;
+        }
+        .form-label {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--text-secondary);
+        }
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            border-radius: var(--radius-input);
+            border: 2px solid var(--border-input);
+            background: var(--surface-input);
+            color: var(--text-primary);
+            font-size: 15px;
+            outline: none;
+            transition: border-color var(--duration-fast);
+        }
+        .form-input:focus {
+            border-color: var(--brand-red);
+            box-shadow: 0 0 0 4px rgba(227,6,19,0.1);
+        }
+        .save-btn {
+            width: 100%;
+            background: var(--brand-red);
+            color: #fff;
+            border: none;
+            border-radius: var(--radius-button);
+            padding: 14px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all var(--duration-medium);
+            margin-top: 4px;
+        }
+        .save-btn:active {
+            transform: scale(0.97);
+        }
+
+        /* ─── PIN INPUTS ─── */
+        .pin-inputs {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin: 16px 0;
+        }
+        .pin-digit {
+            width: 48px;
+            height: 56px;
+            border-radius: 12px;
+            border: 2px solid var(--border-input);
+            background: var(--surface-input);
+            font-size: 22px;
+            font-weight: 700;
+            text-align: center;
+            color: var(--text-primary);
+            outline: none;
+            transition: border-color var(--duration-fast);
+        }
+        .pin-digit:focus {
+            border-color: var(--brand-red);
+            box-shadow: 0 0 0 4px rgba(227,6,19,0.1);
+        }
+
+        /* Responsive tweaks */
+        @media (min-width: 480px) {
+            .main-content { padding: 20px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        /* ===== Install Popup ===== */
+#install-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+#install-popup.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.install-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 28px 24px;
+  max-width: 340px;
+  width: 90%;
+  text-align: center;
+  box-shadow: var(--shadow);
+  border: 3px solid var(--primary);
+  animation: popIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+.install-card img {
+  width: 72px;
+  height: 72px;
+  margin-bottom: 12px;
+}
+
+.install-card h2 {
+  font-size: 1.4rem;
+  color: var(--primary);
+  margin-bottom: 6px;
+}
+
+.install-card p {
+  font-size: 0.95rem;
+  color: #4b5563;
+  margin-bottom: 20px;
+}
+
+.install-btns {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.btn-install {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-install:hover {
+  background: var(--primary-dark);
+}
+
+.btn-later {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-later:hover {
+  background: var(--off-white);
+}
+    </style>
+</head>
+<body>
+
+    <!-- DYNAMIC ISLAND -->
+    <div id="dynamic-island" role="status" aria-live="polite">
+        <div class="island-content">
+            <i class="fas fa-info-circle island-icon" id="island-icon"></i>
+            <span class="island-text" id="island-text">Notification</span>
+        </div>
+    </div>
+
+    <!-- TOP APP BAR -->
+    <header class="app-bar">
+        <div class="app-bar-left">
+            <button class="back-btn" id="back-btn" aria-label="Back"><i class="fas fa-chevron-left"></i></button>
+        </div>
+        <span class="app-bar-title">Profile</span>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon" id="theme-icon"></i></button>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <!-- Profile Header -->
+        <section class="profile-card">
+            <div class="profile-avatar">
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="profile-info">
+                <div class="profile-name" id="profile-name">User Name</div>
+                <div class="profile-phone" id="profile-phone">+234 800 000 0000</div>
+                <div class="profile-email" id="profile-email">user@example.com</div>
+            </div>
+            <button class="edit-profile-btn" id="edit-profile-btn" aria-label="Edit profile"><i class="fas fa-pencil-alt"></i></button>
+        </section>
+
+        <!-- Settings Section -->
+        <section class="settings-card">
+            <h2 class="settings-title">Account Settings</h2>
+            <div class="settings-item" id="edit-name">
+                <div class="settings-icon"><i class="fas fa-user"></i></div>
+                <div class="settings-detail">
+                    <div class="settings-label">Full Name</div>
+                    <div class="settings-value" id="value-fullname">Not set</div>
+                </div>
+                <i class="fas fa-chevron-right settings-chevron"></i>
+            </div>
+            <div class="settings-item" id="edit-email">
+                <div class="settings-icon"><i class="fas fa-envelope"></i></div>
+                <div class="settings-detail">
+                    <div class="settings-label">Email Address</div>
+                    <div class="settings-value" id="value-email">Not set</div>
+                </div>
+                <i class="fas fa-chevron-right settings-chevron"></i>
+            </div>
+            <div class="settings-item" id="edit-phone">
+                <div class="settings-icon"><i class="fas fa-phone-alt"></i></div>
+                <div class="settings-detail">
+                    <div class="settings-label">Phone Number</div>
+                    <div class="settings-value" id="value-phone">Not set</div>
+                </div>
+                <i class="fas fa-chevron-right settings-chevron"></i>
+            </div>
+            <div class="settings-item" id="edit-password">
+                <div class="settings-icon"><i class="fas fa-lock"></i></div>
+                <div class="settings-detail">
+                    <div class="settings-label">Change Password</div>
+                    <div class="settings-value">••••••••</div>
+                </div>
+                <i class="fas fa-chevron-right settings-chevron"></i>
+            </div>
+            <div class="settings-item" id="edit-pin">
+                <div class="settings-icon"><i class="fas fa-shield-alt"></i></div>
+                <div class="settings-detail">
+                    <div class="settings-label">Change Transaction PIN</div>
+                    <div class="settings-value">••••</div>
+                </div>
+                <i class="fas fa-chevron-right settings-chevron"></i>
+            </div>
+        </section>
+
+        <!-- Logout Button -->
+        <button class="logout-btn" id="logout-btn">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Logout</span>
+        </button>
+    </main>
+
+    <!-- BOTTOM TAB BAR -->
+    <nav class="bottom-tab" aria-label="Bottom navigation">
+        <div class="tab-item" id="tab-home"><i class="fas fa-home"></i><span>Home</span></div>
+        <div class="tab-item" id="tab-transactions"><i class="fas fa-list"></i><span>Transactions</span></div>
+        <div class="tab-item" id="tab-wallet"><i class="fas fa-wallet"></i><span>Wallet</span></div>
+        <div class="tab-item active" id="tab-profile"><i class="fas fa-user"></i><span>Profile</span></div>
+    </nav>
+
+    <!-- EDIT SHEET (common) -->
+    <div class="overlay" id="edit-sheet-overlay">
+        <div class="sheet">
+            <div class="sheet-grabber"></div>
+            <div class="sheet-header">
+                <span class="sheet-title" id="edit-sheet-title">Edit</span>
+                <button class="close-sheet" data-close="edit-sheet-overlay"><i class="fas fa-times"></i></button>
+            </div>
+            <div id="edit-sheet-content"></div>
+        </div>
+    </div>
+
+    <!-- PIN CHANGE SHEET -->
+    <div class="overlay" id="pin-sheet-overlay">
+        <div class="sheet">
+            <div class="sheet-grabber"></div>
+            <div class="sheet-header">
+                <span class="sheet-title">Change Transaction PIN</span>
+                <button class="close-sheet" data-close="pin-sheet-overlay"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Current PIN</label>
+                <div class="pin-inputs" id="current-pin-inputs">
+                    <input class="pin-digit" type="password" maxlength="1" inputmode="numeric" placeholder="•" data-pin="0">
+                    <input class="pin-digit" type="password" maxlength="1" inputmode="numeric" placeholder="•" data-pin="1">
+                    <input class="pin-digit" type="password" maxlength="1" inputmode="numeric" placeholder="•" data-pin="2">
+                    <input class="pin-digit" type="password" maxlength="1" inputmode="numeric" placeholder="•" data-pin="3">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="form-label">New PIN</label>
+                <div class="pin-inputs" id="new-pin-inputs">
+                    <input class="pin-digit" type="password" maxlength="1" inputmode="numeric" placeholder="•" data-pin="0">
+                    <input class="pin-digit" type="password" maxlength="1" inputmode="numeric" placeholder="•" data-pin="1">
+                    <input class="pin-digit" type="password" maxlength="1" inputmode="numeric" placeholder="•" data-pin="2">
+                    <input class="pin-digit" type="password" maxlength="1" inputmode="numeric" placeholder="•" data-pin="3">
+                </div>
+            </div>
+            <button class="save-btn" id="save-pin-btn">Update PIN</button>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            'use strict';
+
+            // ─── STORAGE KEYS ───
+            const KEYS = {
+                USERS_PREFIX: 'subcheap_user_',
+                SESSION: 'subcheap_session',
+                THEME: 'subcheap_theme',
+            };
+
+            // ─── DOM REFS ───
+            const dynamicIsland = document.getElementById('dynamic-island');
+            const islandIcon = document.getElementById('island-icon');
+            const islandText = document.getElementById('island-text');
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeIcon = document.getElementById('theme-icon');
+            const backBtn = document.getElementById('back-btn');
+            const logoutBtn = document.getElementById('logout-btn');
+            const editProfileBtn = document.getElementById('edit-profile-btn');
+            const editNameItem = document.getElementById('edit-name');
+            const editEmailItem = document.getElementById('edit-email');
+            const editPhoneItem = document.getElementById('edit-phone');
+            const editPasswordItem = document.getElementById('edit-password');
+            const editPinItem = document.getElementById('edit-pin');
+            const editSheetOverlay = document.getElementById('edit-sheet-overlay');
+            const editSheetTitle = document.getElementById('edit-sheet-title');
+            const editSheetContent = document.getElementById('edit-sheet-content');
+            const pinSheetOverlay = document.getElementById('pin-sheet-overlay');
+            const currentPinInputs = document.querySelectorAll('#current-pin-inputs .pin-digit');
+            const newPinInputs = document.querySelectorAll('#new-pin-inputs .pin-digit');
+            const savePinBtn = document.getElementById('save-pin-btn');
+            const tabHome = document.getElementById('tab-home');
+            const tabTransactions = document.getElementById('tab-transactions');
+            const tabWallet = document.getElementById('tab-wallet');
+            const tabProfile = document.getElementById('tab-profile');
+
+            // ─── STATE ───
+            let currentUser = null;
+            let islandTimeout = null;
+            let currentPin = ['', '', '', ''];
+            let newPin = ['', '', '', ''];
+
+            // ─── INIT ───
+            function init() {
+                // Theme
+                const savedTheme = localStorage.getItem(KEYS.THEME) || 'light';
+                applyTheme(savedTheme);
+
+                // Session check
+                const sessionPhone = localStorage.getItem(KEYS.SESSION);
+                if (!sessionPhone) {
+                    window.location.href = 'index.html';
+                    return;
+                }
+                const userKey = KEYS.USERS_PREFIX + normalizePhone(sessionPhone);
+                const userData = localStorage.getItem(userKey);
+                if (!userData) {
+                    window.location.href = 'index.html';
+                    return;
+                }
+                currentUser = JSON.parse(userData);
+                if (typeof currentUser.balance !== 'number') currentUser.balance = 0.0;
+                saveCurrentUser();
+
+                // Populate UI
+                populateProfile();
+
+                // Event listeners
+                themeToggle.addEventListener('click', toggleTheme);
+                backBtn.addEventListener('click', () => window.history.back());
+                logoutBtn.addEventListener('click', handleLogout);
+                editProfileBtn.addEventListener('click', () => openEditSheet('name'));
+
+                editNameItem.addEventListener('click', () => openEditSheet('name'));
+                editEmailItem.addEventListener('click', () => openEditSheet('email'));
+                editPhoneItem.addEventListener('click', () => openEditSheet('phone'));
+                editPasswordItem.addEventListener('click', () => openEditSheet('password'));
+                editPinItem.addEventListener('click', openPinSheet);
+
+                // Bottom tabs
+                tabHome.addEventListener('click', () => window.location.href = 'home.html');
+                tabTransactions.addEventListener('click', () => window.location.href = 'home.html?tab=transactions');
+                tabWallet.addEventListener('click', () => window.location.href = 'fund.html');
+                tabProfile.addEventListener('click', () => { /* already on profile */ });
+
+                // Close sheets on backdrop
+                document.querySelectorAll('.overlay').forEach(overlay => {
+                    overlay.addEventListener('click', function(e) {
+                        if (e.target === this) this.classList.remove('active');
+                    });
+                });
+                document.querySelectorAll('[data-close]').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const id = this.getAttribute('data-close');
+                        document.getElementById(id).classList.remove('active');
+                    });
+                });
+
+                // PIN inputs
+                setupPinInputs(currentPinInputs, currentPin);
+                setupPinInputs(newPinInputs, newPin);
+                savePinBtn.addEventListener('click', handlePinChange);
+
+                // Logout
+                console.log('Profile page ready');
+            }
+
+            function normalizePhone(phone) {
+                return String(phone).replace(/[\s\-()]/g, '').replace(/^\+234/, '0').trim();
+            }
+
+            function saveCurrentUser() {
+                const userKey = KEYS.USERS_PREFIX + normalizePhone(currentUser.phone);
+                localStorage.setItem(userKey, JSON.stringify(currentUser));
+            }
+
+            function applyTheme(theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+                themeIcon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+                themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+                localStorage.setItem(KEYS.THEME, theme);
+            }
+
+            function toggleTheme() {
+                const current = document.documentElement.getAttribute('data-theme') || 'light';
+                applyTheme(current === 'light' ? 'dark' : 'light');
+            }
+
+            function populateProfile() {
+                if (!currentUser) return;
+                document.getElementById('profile-name').textContent = currentUser.fullName || 'No name set';
+                document.getElementById('profile-phone').textContent = currentUser.phone || 'No phone';
+                document.getElementById('profile-email').textContent = currentUser.email || 'No email';
+                document.getElementById('value-fullname').textContent = currentUser.fullName || 'Not set';
+                document.getElementById('value-email').textContent = currentUser.email || 'Not set';
+                document.getElementById('value-phone').textContent = currentUser.phone || 'Not set';
+            }
+
+            // ─── DYNAMIC ISLAND ───
+            function showIsland(message, iconClass = 'fa-info-circle', duration = 3200) {
+                if (islandTimeout) clearTimeout(islandTimeout);
+                islandIcon.className = 'fas ' + iconClass + ' island-icon';
+                islandText.textContent = message;
+                dynamicIsland.classList.add('island-visible');
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => dynamicIsland.classList.add('island-expanded'));
+                });
+                islandTimeout = setTimeout(() => {
+                    dynamicIsland.classList.remove('island-expanded');
+                    setTimeout(() => dynamicIsland.classList.remove('island-visible'), 350);
+                    islandTimeout = null;
+                }, duration);
+            }
+
+            // ─── EDIT SHEET ───
+            function openEditSheet(type) {
+                editSheetOverlay.classList.add('active');
+                editSheetTitle.textContent = 'Edit ' + type.charAt(0).toUpperCase() + type.slice(1);
+                let html = '';
+                if (type === 'name') {
+                    html = `
+                        <div class="form-group">
+                            <label class="form-label">Full Name</label>
+                            <input class="form-input" type="text" id="edit-input" value="${currentUser.fullName || ''}" autocomplete="off">
+                        </div>
+                    `;
+                } else if (type === 'email') {
+                    html = `
+                        <div class="form-group">
+                            <label class="form-label">Email Address</label>
+                            <input class="form-input" type="email" id="edit-input" value="${currentUser.email || ''}" autocomplete="off">
+                        </div>
+                    `;
+                } else if (type === 'phone') {
+                    html = `
+                        <div class="form-group">
+                            <label class="form-label">Phone Number</label>
+                            <input class="form-input" type="tel" id="edit-input" value="${currentUser.phone || ''}" autocomplete="off">
+                        </div>
+                    `;
+                } else if (type === 'password') {
+                    html = `
+                        <div class="form-group">
+                            <label class="form-label">New Password</label>
+                            <input class="form-input" type="password" id="edit-input" placeholder="Enter new password" autocomplete="off">
+                        </div>
+                    `;
+                }
+                html += `<button class="save-btn" id="save-edit-btn">Save Changes</button>`;
+                editSheetContent.innerHTML = html;
+
+                const saveBtn = document.getElementById('save-edit-btn');
+                if (saveBtn) {
+                    saveBtn.addEventListener('click', () => handleSaveEdit(type));
+                }
+            }
+
+            function handleSaveEdit(type) {
+                const input = document.getElementById('edit-input');
+                if (!input) return;
+                const newValue = input.value.trim();
+                if (!newValue) {
+                    showIsland('Field cannot be empty', 'fa-exclamation-triangle');
+                    return;
+                }
+
+                if (type === 'name') {
+                    currentUser.fullName = newValue;
+                } else if (type === 'email') {
+                    if (!newValue.includes('@') || !newValue.includes('.')) {
+                        showIsland('Invalid email address', 'fa-times-circle');
+                        return;
+                    }
+                    currentUser.email = newValue;
+                } else if (type === 'phone') {
+                    if (!newValue.replace(/\D/g, '').length < 10) {
+                        showIsland('Invalid phone number', 'fa-times-circle');
+                        return;
+                    }
+                    currentUser.phone = normalizePhone(newValue);
+                } else if (type === 'password') {
+                    if (newValue.length < 6) {
+                        showIsland('Password must be at least 6 characters', 'fa-exclamation-triangle');
+                        return;
+                    }
+                    currentUser.password = newValue;
+                }
+
+                saveCurrentUser();
+                populateProfile();
+                editSheetOverlay.classList.remove('active');
+                showIsland('Profile updated successfully', 'fa-check-circle');
+            }
+
+            // ─── PIN CHANGE ───
+            function openPinSheet() {
+                pinSheetOverlay.classList.add('active');
+                currentPin = ['', '', '', ''];
+                newPin = ['', '', '', ''];
+                clearPinInputs(currentPinInputs);
+                clearPinInputs(newPinInputs);
+                currentPinInputs[0].focus();
+            }
+
+            function clearPinInputs(inputs) {
+                inputs.forEach(inp => { inp.value = ''; });
+            }
+
+            function setupPinInputs(inputs, array) {
+                inputs.forEach((input, index) => {
+                    input.addEventListener('input', function() {
+                        const val = this.value.replace(/\D/g, '');
+                        if (val.length > 1) this.value = val.slice(-1);
+                        array[index] = this.value;
+                        if (this.value && index < inputs.length - 1) inputs[index + 1].focus();
+                    });
+                    input.addEventListener('keydown', function(e) {
+                        if (e.key === 'Backspace' && !this.value && index > 0) {
+                            inputs[index - 1].focus();
+                            array[index - 1] = '';
+                        }
+                    });
+                });
+            }
+
+            function handlePinChange() {
+                const currentPinString = currentPin.join('');
+                const newPinString = newPin.join('');
+                if (currentPinString.length !== 4 || newPinString.length !== 4) {
+                    showIsland('Enter all PIN digits', 'fa-exclamation-triangle');
+                    return;
+                }
+                if (currentPinString !== currentUser.pin) {
+                    showIsland('Incorrect current PIN', 'fa-times-circle');
+                    return;
+                }
+                if (newPinString === currentPinString) {
+                    showIsland('New PIN must be different', 'fa-exclamation-triangle');
+                    return;
+                }
+                currentUser.pin = newPinString;
+                saveCurrentUser();
+                pinSheetOverlay.classList.remove('active');
+                showIsland('Transaction PIN updated', 'fa-check-circle');
+            }
+
+            // ─── LOGOUT ───
+            function handleLogout() {
+                localStorage.removeItem(KEYS.SESSION);
+                showIsland('Logout successful', 'fa-sign-out-alt', 2000);
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 800);
+            }
+
+            // Start app
+            init();
+        })();
+    </script>
+    <script>
+  // Register Service Worker
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("/sw.js")
+        .then(reg => console.log("SW registered:", reg.scope))
+        .catch(err => console.log("SW registration failed:", err));
+    });
+  }
+
+  // Install prompt handling
+  let deferredPrompt = null;
+
+  window.addEventListener("beforeinstallprompt", (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    // Show popup as soon as the browser is ready
+    showInstallPopup();
+  });
+
+  function showInstallPopup() {
+    const popup = document.getElementById("install-popup");
+    if (popup) popup.classList.add("show");
+  }
+
+  function hideInstallPopup() {
+    const popup = document.getElementById("install-popup");
+    if (popup) popup.classList.remove("show");
+  }
+
+  // Call this from the Install button
+  async function installApp() {
+    if (!deferredPrompt) {
+      // Fallback for iOS / already installed
+      alert("To install: tap the Share button → Add to Home Screen");
+      hideInstallPopup();
+      return;
+    }
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    console.log("User choice:", outcome);
+    deferredPrompt = null;
+    hideInstallPopup();
+  }
+
+  // Show popup on first load even if beforeinstallprompt hasn't fired yet
+  // (gives users a chance to install immediately)
+  window.addEventListener("load", () => {
+    // Only show if not already installed and not dismissed recently
+    const dismissed = localStorage.getItem("subcheap-install-dismissed");
+    if (!dismissed && !window.matchMedia("(display-mode: standalone)").matches) {
+      setTimeout(showInstallPopup, 800); // slight delay so page feels loaded
+    }
+  });
+
+  function dismissInstall() {
+    localStorage.setItem("subcheap-install-dismissed", Date.now());
+    hideInstallPopup();
+  }
+</script>
+</body>
+</html>

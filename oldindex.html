@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SUBCHEAP - Airtime & Data Made Cheap</title>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-red: #E30613;
+      --primary-dark-red: #B5000C;
+      --bg-body: #F4F6F8;
+      --card-bg: #FFFFFF;
+      --text-main: #1A1A1A;
+      --text-muted: #666666;
+      --border-color: #E0E0E0;
+      --input-bg: #FFFFFF;
+      --shadow-color: rgba(0, 0, 0, 0.08);
+      --pill-track: rgba(255, 255, 255, 0.25);
+    }
+
+    [data-theme="dark"] {
+      --bg-body: #121212;
+      --card-bg: #1E1E1E;
+      --text-main: #FFFFFF;
+      --text-muted: #A0A0A0;
+      --border-color: #333333;
+      --input-bg: #2A2A2A;
+      --shadow-color: rgba(0, 0, 0, 0.5);
+      --pill-track: rgba(0, 0, 0, 0.3);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      padding-bottom: 40px;
+    }
+
+    /* iOS Dynamic Island Popup */
+    .dynamic-island-container {
+      position: fixed;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%) scale(0.8);
+      background-color: #000000;
+      color: #FFFFFF;
+      height: 38px;
+      width: 120px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 14px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+      z-index: 9999;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      overflow: hidden;
+    }
+
+    .dynamic-island-container.active {
+      transform: translateX(-50%) scale(1);
+      width: clamp(280px, 90vw, 360px);
+      height: 52px;
+      border-radius: 26px;
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .island-content {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+    }
+
+    .island-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--primary-red);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: #FFF;
+      flex-shrink: 0;
+    }
+
+    .island-text {
+      font-size: 13px;
+      font-weight: 500;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: #F5F5F7;
+    }
+
+    /* Theme Toggle Switch */
+    .theme-toggle-btn {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      color: #FFFFFF;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      z-index: 10;
+      backdrop-filter: blur(4px);
+    }
+
+    /* Top Branding Header */
+    .branding-header {
+      width: 100%;
+      background-color: var(--primary-red);
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(0, 0, 0, 0.12) 0%, transparent 50%);
+      padding: 32px 20px 60px 20px;
+      text-align: center;
+      position: relative;
+      color: #FFFFFF;
+    }
+
+    .brand-logo-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .brand-logo {
+      width: 38px;
+      height: 38px;
+      object-fit: contain;
+    }
+
+    .brand-wordmark {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+
+    .brand-tagline {
+      font-size: 13px;
+      opacity: 0.9;
+      font-weight: 400;
+      margin-bottom: 22px;
+    }
+
+    /* Navigation Pills */
+    .nav-tabs-track {
+      display: inline-flex;
+      background: var(--pill-track);
+      padding: 4px;
+      border-radius: 30px;
+      width: 100%;
+      max-width: 240px;
+    }
+
+    .nav-tab {
+      flex: 1;
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: none;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      background: transparent;
+      color: #FFFFFF;
+      text-align: center;
+    }
+
+    .nav-tab.active {
+      background: #FFFFFF;
+      color: var(--primary-red);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .nav-tab.outline {
+      border: 1px solid rgba(255,255,255,0.6);
+      color: #FFFFFF;
+    }
+
+    /* Form Container */
+    .form-card {
+      width: calc(100% - 32px);
+      max-width: 440px;
+      background: var(--card-bg);
+      border-radius: 24px;
+      box-shadow: 0 12px 32px var(--shadow-color);
+      margin-top: -30px;
+      padding: 28px 24px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-header-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .card-header-text h1 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+
+    .card-header-text p {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* Input Groups */
+    .field-group {
+      margin-bottom: 16px;
+    }
+
+    .field-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 6px;
+    }
+
+    .input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .leading-icon {
+      position: absolute;
+      left: 14px;
+      color: var(--primary-red);
+      font-size: 14px;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 12px 14px 12px 40px;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      background-color: var(--input-bg);
+      color: var(--text-main);
+      font-size: 14px;
+      outline: none;
+    }
+
+    .form-input:focus {
+      border-color: var(--primary-red);
+    }
+
+    .trailing-icon {
+      position: absolute;
+      right: 14px;
+      color: var(--text-muted);
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    /* Checkbox Consent */
+    .consent-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .consent-container input[type="checkbox"] {
+      accent-color: var(--primary-red);
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+
+    .consent-text {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .legal-link {
+      color: var(--primary-red);
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* Primary CTA */
+    .btn-primary {
+      width: 100%;
+      background-color: var(--primary-red);
+      color: #FFFFFF;
+      border: none;
+      padding: 14px;
+      border-radius: 25px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(227, 6, 19, 0.25);
+    }
+
+    .btn-primary:active {
+      transform: scale(0.99);
+    }
+
+    .switch-tab-footer {
+      text-align: center;
+      margin-top: 18px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* Modal / Bottom Sheet Overlay */
+    .overlay-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .overlay-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Policy Popup Container */
+    .modal-container {
+      background: var(--card-bg);
+      width: 100%;
+      max-width: 500px;
+      max-height: 80vh;
+      border-radius: 20px 20px 0 0;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .overlay-backdrop.open .modal-container {
+      transform: translateY(0);
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .modal-header h3 {
+      font-size: 16px;
+      color: var(--text-main);
+    }
+
+    .modal-close-btn {
+      font-size: 18px;
+      color: var(--text-muted);
+      cursor: pointer;
+    }
+
+    .modal-body {
+      overflow-y: auto;
+      padding-top: 16px;
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Modern Loader */
+    .loader-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(4px);
+      z-index: 2000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .loader-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .spinner-ring {
+      width: 50px;
+      height: 50px;
+      border: 4px solid rgba(255, 255, 255, 0.1);
+      border-left-color: var(--primary-red);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* PIN Bottom Sheet */
+    .pin-pad-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 20px;
+      max-width: 280px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .pin-display {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .pin-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 2px solid var(--border-color);
+    }
+
+    .pin-dot.filled {
+      background: var(--primary-red);
+      border-color: var(--primary-red);
+    }
+
+    .pin-btn {
+      background: var(--input-bg);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 14px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Dynamic Island Notification Container -->
+  <div class="dynamic-island-container" id="dynamicIsland">
+    <div class="island-content">
+      <div class="island-icon" id="islandIcon">
+        <i class="fas fa-check"></i>
+      </div>
+      <div class="island-text" id="islandText">Notification</div>
+    </div>
+  </div>
+
+  <!-- Header Section -->
+  <header class="branding-header">
+    <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Theme">
+      <i class="fas fa-moon"></i>
+    </button>
+    <div class="brand-logo-wrap">
+      <img src="https://cdn-icons-png.flaticon.com/128/18343/18343315.png" alt="SUBCHEAP Logo" class="brand-logo">
+      <span class="brand-wordmark">SUBCHEAP</span>
+    </div>
+    <p class="brand-tagline">Airtime & Data made cheap!</p>
+
+    <!-- Navigation Pills -->
+    <div class="nav-tabs-track">
+      <button class="nav-tab outline" id="loginTabBtn" onclick="switchTab('login')">Log In</button>
+      <button class="nav-tab active" id="signupTabBtn" onclick="switchTab('signup')">Sign Up</button>
+    </div>
+  </header>
+
+  <!-- Main Card Component -->
+  <main class="form-card">
+    
+    <!-- Sign Up Tab View -->
+    <section id="signupView" class="tab-content active">
+      <div class="card-header-flex">
+        <div class="card-header-text">
+          <h1>Create your account</h1>
+          <p>Sign up to enjoy cheap airtime & data and amazing deals.</p>
+        </div>
+      </div>
+
+      <form id="signupForm" onsubmit="handleSignup(event)">
+        <div class="field-group">
+          <label class="field-label">Full Name</label>
+          <div class="input-wrapper">
+            <i class="fas fa-user leading-icon"></i>
+            <input type="text" id="signupFullName" class="form-input" placeholder="Enter your full name" required>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label">Phone Number</label>
+          <div class="input-wrapper">
+            <i class="fas fa-phone leading-icon"></i>
+            <input type="tel" id="signupPhone" class="form-input" placeholder="Enter your phone number" required>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label">Email Address</label>
+          <div class="input-wrapper">
+            <i class="fas fa-envelope leading-icon"></i>
+            <input type="email" id="signupEmail" class="form-input" placeholder="Enter your email address" required>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label">Create Password</label>
+          <div class="input-wrapper">
+            <i class="fas fa-lock leading-icon"></i>
+            <input type="password" id="signupPassword" class="form-input" placeholder="Create a password" required>
+            <i class="fas fa-eye trailing-icon" onclick="togglePasswordVisibility('signupPassword', this)"></i>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label">Confirm Password</label>
+          <div class="input-wrapper">
+            <i class="fas fa-lock leading-icon"></i>
+            <input type="password" id="signupConfirmPassword" class="form-input" placeholder="Confirm your password" required>
+            <i class="fas fa-eye trailing-icon" onclick="togglePasswordVisibility('signupConfirmPassword', this)"></i>
+          </div>
+        </div>
+
+        <div class="consent-container">
+          <input type="checkbox" id="consentCheckbox" required>
+          <label for="consentCheckbox" class="consent-text">
+            I agree to the <span class="legal-link" onclick="openPolicyModal()">Terms & Conditions and Privacy Policy</span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn-primary">Create Account</button>
+      </form>
+
+      <div class="switch-tab-footer">
+        Already have an account? <span class="legal-link" onclick="switchTab('login')">Log in</span>
+      </div>
+    </section>
+
+    <!-- Log In Tab View -->
+    <section id="loginView" class="tab-content">
+      <div class="card-header-flex">
+        <div class="card-header-text">
+          <h1>Welcome Back</h1>
+          <p>Login to manage your airtime, data & transactions.</p>
+        </div>
+      </div>
+
+      <form id="loginForm" onsubmit="handleLogin(event)">
+        <div class="field-group">
+          <label class="field-label">Phone Number</label>
+          <div class="input-wrapper">
+            <i class="fas fa-phone leading-icon"></i>
+            <input type="tel" id="loginPhone" class="form-input" placeholder="Enter your phone number" required>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label">Password</label>
+          <div class="input-wrapper">
+            <i class="fas fa-lock leading-icon"></i>
+            <input type="password" id="loginPassword" class="form-input" placeholder="Enter your password" required>
+            <i class="fas fa-eye trailing-icon" onclick="togglePasswordVisibility('loginPassword', this)"></i>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary" style="margin-top: 10px;">Log In</button>
+      </form>
+
+      <div class="switch-tab-footer">
+        Don't have an account? <span class="legal-link" onclick="switchTab('signup')">Sign Up</span>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Legal Policy Modal -->
+  <div class="overlay-backdrop" id="policyModalBackdrop">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3>Terms & Privacy Policy</h3>
+        <i class="fas fa-xmark modal-close-btn" onclick="closePolicyModal()"></i>
+      </div>
+      <div class="modal-body">
+        <p><strong>1. Introduction</strong><br>Welcome to SUBCHEAP. By creating an account or using our platform for purchasing airtime, data, or utility bill payments, you agree to comply with our conditions.</p><br>
+        <p><strong>2. Account & Security</strong><br>Users must maintain a valid phone number and set up a secret 4-digit transaction PIN. You are accountable for keeping your credentials confidential.</p><br>
+        <p><strong>3. Transactions & Refunds</strong><br>All airtime and data purchases are processed electronically. Successful transactions cannot be reversed once processed to a destination phone number.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PIN Entry Bottom Sheet -->
+  <div class="overlay-backdrop" id="pinSheetBackdrop">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3>Set Transaction PIN</h3>
+      </div>
+      <div class="modal-body" style="text-align: center;">
+        <p>Create a 4-digit transaction PIN to authorize payments on SUBCHEAP.</p>
+        <div class="pin-display">
+          <div class="pin-dot" id="dot-0"></div>
+          <div class="pin-dot" id="dot-1"></div>
+          <div class="pin-dot" id="dot-2"></div>
+          <div class="pin-dot" id="dot-3"></div>
+        </div>
+        <div class="pin-pad-grid">
+          <button class="pin-btn" onclick="enterPinDigit('1')">1</button>
+          <button class="pin-btn" onclick="enterPinDigit('2')">2</button>
+          <button class="pin-btn" onclick="enterPinDigit('3')">3</button>
+          <button class="pin-btn" onclick="enterPinDigit('4')">4</button>
+          <button class="pin-btn" onclick="enterPinDigit('5')">5</button>
+          <button class="pin-btn" onclick="enterPinDigit('6')">6</button>
+          <button class="pin-btn" onclick="enterPinDigit('7')">7</button>
+          <button class="pin-btn" onclick="enterPinDigit('8')">8</button>
+          <button class="pin-btn" onclick="enterPinDigit('9')">9</button>
+          <button class="pin-btn" onclick="enterPinDigit('clear')"><i class="fas fa-trash"></i></button>
+          <button class="pin-btn" onclick="enterPinDigit('0')">0</button>
+          <button class="pin-btn" onclick="enterPinDigit('del')"><i class="fas fa-backspace"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- App Loader Overlay -->
+  <div class="loader-overlay" id="appLoader">
+    <div class="spinner-ring"></div>
+  </div>
+
+  <script>
+    let currentPin = '';
+
+    // Initialize Theme State
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      applyTheme(savedTheme);
+    });
+
+    function applyTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      const icon = document.querySelector('#themeToggleBtn i');
+      if (theme === 'dark') {
+        icon.className = 'fas fa-sun';
+      } else {
+        icon.className = 'fas fa-moon';
+      }
+    }
+
+    document.getElementById('themeToggleBtn').addEventListener('click', () => {
+      const current = localStorage.getItem('theme') === 'dark' ? 'light' : 'dark';
+      applyTheme(current);
+    });
+
+    // Dynamic Island Popups
+    function showDynamicIslandNotification(message, iconClass = 'fa-check') {
+      const island = document.getElementById('dynamicIsland');
+      const textEl = document.getElementById('islandText');
+      const iconEl = document.getElementById('islandIcon');
+
+      textEl.textContent = message;
+      iconEl.innerHTML = `<i class="fas ${iconClass}"></i>`;
+
+      island.classList.add('active');
+
+      setTimeout(() => {
+        island.classList.remove('active');
+      }, 3000);
+    }
+
+    // Toggle Password Visibility
+    function togglePasswordVisibility(fieldId, iconElement) {
+      const input = document.getElementById(fieldId);
+      if (input.type === 'password') {
+        input.type = 'text';
+        iconElement.className = 'fas fa-eye-slash trailing-icon';
+      } else {
+        input.type = 'password';
+        iconElement.className = 'fas fa-eye trailing-icon';
+      }
+    }
+
+    // Tab Switching
+    function switchTab(tabName) {
+      const loginBtn = document.getElementById('loginTabBtn');
+      const signupBtn = document.getElementById('signupTabBtn');
+      const signupView = document.getElementById('signupView');
+      const loginView = document.getElementById('loginView');
+
+      if (tabName === 'login') {
+        loginBtn.className = 'nav-tab active';
+        signupBtn.className = 'nav-tab outline';
+        signupView.classList.remove('active');
+        loginView.classList.add('active');
+      } else {
+        signupBtn.className = 'nav-tab active';
+        loginBtn.className = 'nav-tab outline';
+        loginView.classList.remove('active');
+        signupView.classList.add('active');
+      }
+    }
+
+    // Modal Control
+    function openPolicyModal() {
+      document.getElementById('policyModalBackdrop').classList.add('open');
+    }
+
+    function closePolicyModal() {
+      document.getElementById('policyModalBackdrop').classList.remove('open');
+    }
+
+    // Handle Registration Process
+    function handleSignup(event) {
+      event.preventDefault();
+
+      const fullName = document.getElementById('signupFullName').value.trim();
+      const phone = document.getElementById('signupPhone').value.trim();
+      const email = document.getElementById('signupEmail').value.trim();
+      const password = document.getElementById('signupPassword').value;
+      const confirmPassword = document.getElementById('signupConfirmPassword').value;
+
+      if (password !== confirmPassword) {
+        showDynamicIslandNotification('Passwords do not match!', 'fa-circle-exclamation');
+        return;
+      }
+
+      // Save user details into LocalStorage
+      const userProfile = {
+        fullName: fullName,
+        phone: phone,
+        email: email,
+        password: password,
+        userBalance: 0.00
+      };
+
+      localStorage.setItem('userProfile', JSON.stringify(userProfile));
+
+      // Display loader animation
+      const loader = document.getElementById('appLoader');
+      loader.classList.add('active');
+
+      setTimeout(() => {
+        loader.classList.remove('active');
+        showDynamicIslandNotification('Account created successfully!', 'fa-check');
+        
+        // Display PIN setup bottom sheet
+        document.getElementById('pinSheetBackdrop').classList.add('open');
+      }, 1800);
+    }
+
+    // PIN Pad Mechanics
+    function enterPinDigit(digit) {
+      if (digit === 'clear') {
+        currentPin = '';
+      } else if (digit === 'del') {
+        currentPin = currentPin.slice(0, -1);
+      } else if (currentPin.length < 4) {
+        currentPin += digit;
+      }
+
+      updatePinDots();
+
+      if (currentPin.length === 4) {
+        setTimeout(() => {
+          localStorage.setItem('transactionPin', currentPin);
+          document.getElementById('pinSheetBackdrop').classList.remove('open');
+          showDynamicIslandNotification('PIN setup complete!', 'fa-lock');
+          
+          setTimeout(() => {
+            window.location.href = 'home.html';
+          }, 1200);
+        }, 300);
+      }
+    }
+
+    function updatePinDots() {
+      for (let i = 0; i < 4; i++) {
+        const dot = document.getElementById(`dot-${i}`);
+        if (i < currentPin.length) {
+          dot.classList.add('filled');
+        } else {
+          dot.classList.remove('filled');
+        }
+      }
+    }
+
+    // Handle Login Logic
+    function handleLogin(event) {
+      event.preventDefault();
+      const phone = document.getElementById('loginPhone').value.trim();
+      const password = document.getElementById('loginPassword').value;
+
+      const storedUser = JSON.parse(localStorage.getItem('userProfile'));
+
+      if (storedUser && storedUser.phone === phone && storedUser.password === password) {
+        showDynamicIslandNotification('Login successful!', 'fa-right-to-bracket');
+        setTimeout(() => {
+          window.location.href = 'home.html';
+        }, 1200);
+      } else {
+        showDynamicIslandNotification('Invalid phone or password', 'fa-triangle-exclamation');
+      }
+    }
+  </script>
+</body>
+</html>
